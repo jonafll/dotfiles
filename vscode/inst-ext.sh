@@ -16,4 +16,4 @@ fi
 
 while IFS= read -r line; do
   code --install-extension "$line"
-done < ~/.dotfiles/vscode/extensions.txt
+done < ~/.dotfiles/vscode/extensions.generated

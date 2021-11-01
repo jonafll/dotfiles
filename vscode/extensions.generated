@@ -1,5 +1,6 @@
 akamud.vscode-theme-onedark
 antfu.icons-carbon
+arcticicestudio.nord-visual-studio-code
 bradlc.vscode-tailwindcss
 DavidAnson.vscode-markdownlint
 DotJoshJohnson.xml
@@ -11,5 +12,6 @@ golang.go
 ms-azuretools.vscode-docker
 rust-lang.rust
 silvenon.mdx
+skyapps.fish-vscode
 tamasfe.even-better-toml
 timonwong.shellcheck
