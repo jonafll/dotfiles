@@ -1,5 +1,6 @@
+# Configuration for fish, the user-friendly command-line shell for UNIX-like operating systems
 
-# Env
+# Exports
 
 # Disable greeting
 set fish_greeting
@@ -13,18 +14,10 @@ set -x EDITOR vim
 # Language
 set -x LANG de_DE.UTF-8
 
-# Autocomplete and highlight colors
-#set fish_color_normal brcyan
-#set fish_color_autosuggestion "#7d7d7d"
-#set fish_color_command brcyan
-#set fish_color_error "#ff6c6b"
-#set fish_color_param brcyan
-
 # GPG
 set -x GPG_TTY (tty)
 
 # Go
-#set -x GOPATH ~/.go
 set -x GOPATH ~/.go
 
 # Alias
