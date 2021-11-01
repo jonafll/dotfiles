@@ -1,4 +1,4 @@
-# Settings for firefox
+# Settings for Firefox
 
 ## Config
 

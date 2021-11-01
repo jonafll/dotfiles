@@ -1,18 +1,16 @@
 # Configuration for zsh
 
-#local ret_status="%(?:%{$fg_bold[green]%}ƒ:%{$fg_bold[red]%}ƒ)"
-#PROMPT='${ret_status} %{$fg[white]%}%c%{$reset_color%} '
+local ret_status="%(?:%{$fg_bold[green]%}ƒ:%{$fg_bold[red]%}ƒ)"
+PROMPT='${ret_status} %{$fg[white]%}%c%{$reset_color%} '
 
 # Init oh-my-zsh
-#export ZSH=~/.oh-my-zsh
-#plugins=(docker cargo)
-#source $ZSH/oh-my-zsh.sh
+export ZSH=~/.oh-my-zsh
+plugins=(docker cargo)
+source $ZSH/oh-my-zsh.sh
 
 # Override LSCOLORS from oh-my-zsh
-#LSCOLORS=exfxcxdxbxegedabagacad
-
-#export CLICOLOR=1
 #export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
+#export LS_COLORS="ow=36:di=34:fi=32:ex=31:ln=35:"
 
 # Get proper colors
 export TERM=xterm-256color
