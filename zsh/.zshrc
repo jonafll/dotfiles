@@ -5,7 +5,7 @@ PROMPT='${ret_status} %{$fg[white]%}%c%{$reset_color%} '
 
 # Init oh-my-zsh
 export ZSH=~/.oh-my-zsh
-plugins=(docker cargo)
+plugins=(docker)
 source $ZSH/oh-my-zsh.sh
 
 # Override LSCOLORS from oh-my-zsh
