@@ -1,0 +1,20 @@
+[user]
+	name = jonafll
+	email = contact@jonafellisch.com
+	signingKey = E1F2ED52206682E0
+
+[init]
+	defaultBranch = master
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgSign = true
+
+[alias]
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	
+[pull]
+	ff = only
