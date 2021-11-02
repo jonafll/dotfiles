@@ -30,11 +30,6 @@ ln -s "$DOTFILES_DIR"/zsh/.zshrc ~/.zshrc
 ln -s "$DOTFILES_DIR"/git/.gitconfig ~/.gitconfig
 ln -s "$DOTFILES_DIR"/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-# if ! [ -d ~/.config/fish ]; then
-#   mkdir ~/.config/fish && chown 700 ~/.config/fish
-# fi
-# ln -s "$DOTFILES_DIR"/fish/config.fish ~/.config/fish/config.fish
-
 if ! [ -d ~/Library/Application\ Support/Code ]; then
   echo "Visual Studio Code is not installed"
   echo "Execute this command manually: ln -s ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json"
@@ -71,10 +66,6 @@ cp -R "$DOTFILES_DIR"/fonts/* ~/Library/Fonts/
 
 # Update icons
 appiconupdate "$DOTFILES_DIR"/icons
-
-# Change shell
-# echo /usr/local/bin/fish | sudo tee -a /etc/shells
-# chsh -s /usr/local/bin/fish
 
 echo "Done 🍻"
 echo "Next steps:"
