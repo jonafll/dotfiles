@@ -377,19 +377,19 @@ colors: *nord
 ##       END OF COLOR SCHEMES        ##
 #######################################
 
-# Cursor configuration
-cursor:
-  style:
-    shape: Block
-    blinking: Off
-    unfocused_hollow: true
-
 selection:
   semantic_escape_chars: ',│`|:"'' ()[]{}<>'
 
 # Send ESC (\x1b) before characters when alt is pressed (fixes "pipe symbol doesn't work on macOS")
 # https://github.com/alacritty/alacritty/issues/1349
 alt_send_esc: false
+
+# Cursor configuration
+cursor:
+  style:
+    shape: Block
+    blinking: Off
+    unfocused_hollow: true
 
 # Set keybindings
 key_bindings:
