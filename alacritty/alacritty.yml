@@ -17,7 +17,6 @@ window:
 
 scrolling:
   history: 5000
-  multiplier: 3
 
 # Font configuration
 font:
@@ -42,6 +41,10 @@ font:
     x: 0
     y: 3
 
+  # Thin stroke font rendering (macOS only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina screens
+  # it is recommended to set `use_thin_strokes` to `false`.
   use_thin_strokes: false
 
 # If `true`, bold text is drawn using the bright color variants.
@@ -374,12 +377,21 @@ colors: *nord
 ##       END OF COLOR SCHEMES        ##
 #######################################
 
+# Cursor configuration
 cursor:
   style:
     shape: Block
-    blinking: Always
+    blinking: Off
     unfocused_hollow: true
 
+selection:
+  semantic_escape_chars: ',│`|:"'' ()[]{}<>'
+
+# Send ESC (\x1b) before characters when alt is pressed (fixes "pipe symbol doesn't work on macOS")
+# https://github.com/alacritty/alacritty/issues/1349
+alt_send_esc: false
+
+# Set keybindings
 key_bindings:
   - { key: Left, mods: Command, chars: "\x01" } # Jump to beginning of line
   - { key: Right, mods: Command, chars: "\x05" } # Jump to end of line
