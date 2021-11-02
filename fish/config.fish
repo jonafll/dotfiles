@@ -46,9 +46,42 @@ alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias psmem='ps aux | sort -nr -k 4'
 alias pscpu='ps aux | sort -nr -k 3'
 
-# Misc
+# Shell Config
 alias zshconf="vim ~/.zshrc"
 alias fishconf="vim ~/.config/fish/config.fish"
-alias snippetsconf="vim ~/.snippets"
+
+# Update icons
 alias appiconupdate="appiconupdate ~/.dotfiles/icons"
+
+# Networking
 alias netinfo="networksetup -getinfo Wi-Fi"
+alias netls="networksetup -listallnetworkservices"
+
+# Security
+alias genpasswd="openssl rand -base64 24"
+
+# Snippets
+
+# Show applications using a certain port
+# sudo lsof -i :80
+
+# Hexviewer
+# xxd file | less
+
+# Show disk usage for directory as sorted with human readable output
+# du -sh <DIRECTORY>/* | sort -h
+
+# Generate password and add it to keychain (macOS)
+# security add-generic-password -D secret -U -a "$USER" -s <SECRET_PASSWORD> -w "$(openssl rand -base64 24)"
+
+# Clipboard commands (macOS)
+# pbcopy < file.txt
+# ps aux | pbcopy
+# pbpaste > file.txt
+
+# Convert / process images
+# sips -s format png input.icns --out output.png
+# sips -s format icns input.png --out output.icns
+
+# Make a detached signature with pgp
+# gpg --armor --detach-sign file
