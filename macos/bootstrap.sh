@@ -38,9 +38,11 @@ else
 fi
 
 # Install oh-my-zsh
+echo "Installing oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install Homebrew
+echo "Installing homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Opt out of analytics
@@ -56,12 +58,13 @@ curl -sSL https://github.com/jonafll/ship/releases/download/v0.2.0/ship.sh > /us
 curl -sSL https://github.com/jonafll/spot/releases/download/v0.2.0/spot.sh > /usr/local/bin/spot && chmod 755 /usr/local/bin/spot
 
 # Install appiconupdate
-curl -sSL https://github.com/jonafll/appiconupdate/releases/download/v0.2.0/appiconupdate.sh > /usr/local/bin/appiconupdate && chmod 755 /usr/local/bin/appiconupdate
+curl -sSL https://github.com/jonafll/appiconupdate/releases/download/v0.2.1/appiconupdate.sh > /usr/local/bin/appiconupdate && chmod 755 /usr/local/bin/appiconupdate
 
 # Install app-cleaner
 curl -sSL https://sunknudsen.com/static/media/privacy-guides/how-to-clean-uninstall-macos-apps-using-appcleaner-open-source-alternative/app-cleaner.sh > /usr/local/bin/app-cleaner && chmod 755 /usr/local/bin/app-cleaner
 
 # Install fonts
+echo "Installing fonts..."
 cp -R "$DOTFILES_DIR"/fonts/* ~/Library/Fonts/
 
 # Update icons
