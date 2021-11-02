@@ -57,7 +57,7 @@ alias netls="networksetup -listallnetworkservices"
 alias genpasswd="openssl rand -base64 24"
 
 # Make a detached signature with gpg
-alias signd="gpg --armor --detach-sign"
+alias sigd="gpg --armor --detach-sign"
 
 # Snippets
 
