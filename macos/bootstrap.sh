@@ -61,7 +61,7 @@ curl -sSL https://github.com/jonafll/ship/releases/download/v0.2.0/ship.sh > /us
 curl -sSL https://github.com/jonafll/spot/releases/download/v0.2.0/spot.sh > /usr/local/bin/spot && chmod 755 /usr/local/bin/spot
 
 # Install appiconupdate
-curl -sSL https://github.com/jonafll/appiconupdate/releases/download/v0.1.0/appiconupdate.sh > /usr/local/bin/appiconupdate && chmod 755 /usr/local/bin/appiconupdate
+curl -sSL https://github.com/jonafll/appiconupdate/releases/download/v0.2.0/appiconupdate.sh > /usr/local/bin/appiconupdate && chmod 755 /usr/local/bin/appiconupdate
 
 # Install app-cleaner
 curl -sSL https://sunknudsen.com/static/media/privacy-guides/how-to-clean-uninstall-macos-apps-using-appcleaner-open-source-alternative/app-cleaner.sh > /usr/local/bin/app-cleaner && chmod 755 /usr/local/bin/app-cleaner
