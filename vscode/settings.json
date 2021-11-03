@@ -25,7 +25,7 @@
   "explorer.confirmDelete": false,
 
   "editor.fontSize": 13,
-  "editor.fontFamily": "'Hack Nerd Font Mono', monospace",
+  "editor.fontFamily": "'Source Code Pro', 'Hack Nerd Font Mono', monospace",
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "editor.smoothScrolling": true,
@@ -43,10 +43,9 @@
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.fontSize": 13,
   "terminal.integrated.fontWeight": "normal",
-  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
-  "terminal.integrated.letterSpacing": 0.9,
+  "terminal.integrated.fontFamily": "Source Code Pro",
   "terminal.integrated.fontWeightBold": "bold",
-  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.lineHeight": 1.1,
   "terminal.integrated.allowChords": false,
 
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, Inter, sans-serif",
