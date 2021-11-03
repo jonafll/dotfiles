@@ -8,10 +8,6 @@ export ZSH=~/.oh-my-zsh
 plugins=(docker)
 source $ZSH/oh-my-zsh.sh
 
-# Override LSCOLORS from oh-my-zsh
-# export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
-# export LS_COLORS=ow=36:di=34:fi=32:ex=31:ln=35:
-
 # Get proper colors
 export TERM=xterm-256color
 
@@ -55,7 +51,6 @@ alias pscpu='ps aux | sort -nr -k 3'
 
 # Shell Config
 alias zshconf="vim ~/.zshrc"
-alias fishconf="vim ~/.config/fish/config.fish"
 
 # Update icons
 alias appiconupdate="appiconupdate ~/.dotfiles/icons"
