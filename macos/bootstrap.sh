@@ -28,6 +28,7 @@ xcode-select --install
 ln -s "$DOTFILES_DIR"/vim/.vimrc ~/.vimrc
 ln -s "$DOTFILES_DIR"/zsh/.zshrc ~/.zshrc
 ln -s "$DOTFILES_DIR"/git/.gitconfig ~/.gitconfig
+ln -s "$DOTFILES_DIR"/npm/.npmrc ~/.npmrc
 ln -s "$DOTFILES_DIR"/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 if ! [ -d ~/Library/Application\ Support/Code ]; then
