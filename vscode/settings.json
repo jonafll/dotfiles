@@ -1,15 +1,26 @@
 {
-  "workbench.colorTheme": "Atom One Dark",
-  "workbench.iconTheme": "atom-icons",
+  // General
+  "workbench.colorTheme": "Nord",
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.colorCustomizations": {
-    "focusBorder": "#00000000"
+    "[Atom One Dark]": {
+      "focusBorder": "#00000000"
+    },
+    "[Nord]": {
+      "activityBar.border": "#3b4252",
+      "activityBarBadge.background": "#81a1c1",
+      "activityBarBadge.foreground": "#eceff4",
+      "list.activeSelectionForeground": "#eceff4",
+      "list.activeSelectionBackground": "#474e5ecc"
+    }
   },
   "workbench.startupEditor": "newUntitledFile",
   "workbench.enableExperiments": false,
   "workbench.settings.editor": "json",
   "workbench.list.openMode": "doubleClick",
   "telemetry.telemetryLevel": "off",
+
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
 
@@ -17,13 +28,17 @@
   "editor.fontFamily": "'Hack Nerd Font Mono', monospace",
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
+  "editor.smoothScrolling": true,
+
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
 
   "git.confirmSync": false,
   "git.enableCommitSigning": true,
   "git.rebaseWhenSync": true,
 
-  "gitlens.hovers.currentLine.over": "annotation",
-
+  "terminal.explorerKind": "external",
+  "terminal.external.osxExec": "Alacritty.app",
   "terminal.integrated.cursorBlinking": false,
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.fontSize": 13,
@@ -34,8 +49,20 @@
   "terminal.integrated.lineHeight": 1.2,
   "terminal.integrated.allowChords": false,
 
-  "prettier.arrowParens": "always",
+  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, Inter, sans-serif",
 
+  // Extensions
+  "gitlens.hovers.currentLine.over": "annotation",
+  "prettier.arrowParens": "always",
+  "go.autocompleteUnimportedPackages": true,
+
+  // Theme and colors
+  "material-icon-theme.activeIconPack": "react",
+  "material-icon-theme.folders.color": "#616e88",
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.saturation": 0.6,
+
+  // Languages
   "[shellscript]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2

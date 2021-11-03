@@ -1,4 +1,3 @@
-akamud.vscode-theme-onedark
 antfu.icons-carbon
 arcticicestudio.nord-visual-studio-code
 bradlc.vscode-tailwindcss
@@ -6,10 +5,10 @@ DavidAnson.vscode-markdownlint
 DotJoshJohnson.xml
 eamodio.gitlens
 EditorConfig.EditorConfig
-emroussel.atom-icons
 esbenp.prettier-vscode
 golang.go
 ms-azuretools.vscode-docker
+PKief.material-icon-theme
 rust-lang.rust
 silvenon.mdx
 tamasfe.even-better-toml
