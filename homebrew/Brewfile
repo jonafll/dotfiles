@@ -4,6 +4,9 @@ tap "homebrew/core"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
 brew "clang-format"
 
+# Modern replacement for 'ls'
+brew "exa"
+
 # Perl lib for reading and writing EXIF metadata
 brew "exiftool"
 
@@ -18,6 +21,9 @@ brew "gnupg"
 
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+
+# Improved top (interactive process viewer)
+brew "htop"
 
 # Lightweight and flexible command-line JSON processor
 brew "jq"
@@ -39,12 +45,3 @@ brew "zsh-autosuggestions"
 
 # Fish shell like syntax highlighting for zsh
 brew "zsh-syntax-highlighting"
-
-# Improved top (interactive process viewer)
-brew "htop"
-
-# Modern replacement for 'ls'
-brew "exa"
-
-# User-friendly command-line shell for UNIX-like operating systems
-brew "fish"
