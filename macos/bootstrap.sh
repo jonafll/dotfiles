@@ -24,6 +24,11 @@ fi
 # Install Apple's Command Line Tools, which are prerequisities for Git and Homebrew
 xcode-select --install
 
+# Create .config
+if ! [ -d ~/.config ]; then
+  mkdir ~/.config
+fi
+
 # Symlink configs
 ln -s "$DOTFILES_DIR"/vim/.vimrc ~/.vimrc
 ln -s "$DOTFILES_DIR"/zsh/.zshrc ~/.zshrc
@@ -51,6 +56,9 @@ brew analytics off
 
 # Install all homebrew packages
 brew bundle --file "$DOTFILES_DIR"/homebrew/Brewfile
+
+# Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Install ship
 curl -sSL https://github.com/jonafll/ship/releases/download/v0.2.0/ship.sh > /usr/local/bin/ship && chmod 755 /usr/local/bin/ship
