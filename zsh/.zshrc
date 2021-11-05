@@ -48,6 +48,9 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Alias
 
+# Alias v to vim
+alias v="vim"
+
 # Colorize grep output (good for log files) 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
