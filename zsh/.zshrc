@@ -48,7 +48,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Alias
 
-# Alias v to vim
+# Vim
 alias v="vim"
 
 # Colorize grep output (good for log files) 
@@ -71,8 +71,10 @@ alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias psmem='ps aux | sort -nr -k 4'
 alias pscpu='ps aux | sort -nr -k 3'
 
-# Shell Config
+# Open configs
 alias zshconf="vim ~/.zshrc"
+alias vimconf="vim ~/.vimrc"
+alias alacrittyconf="vim ~/.dotfiles/alacritty/alacritty.yml"
 
 # Update icons
 alias appiconupdate="appiconupdate ~/.dotfiles/icons"
