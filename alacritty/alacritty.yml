@@ -269,4 +269,9 @@ key_bindings:
   - { key: Right, mods: Command, chars: "\x05" } # Jump to end of line
   - { key: Left, mods: Alt, chars: "\x1bb" } # One word left
   - { key: Right, mods: Alt, chars: "\x1bf" } # One word right
-  - { key: Back, mods: Command, chars: "\x15" } # Delete line
+  - { key: Back, mods: Super, chars: "\x15" } # Delete word (option) / line (command)
+
+# Shortcuts
+# Control + w: Delete previous word from the current cursor position
+# Control + k: Delete the text from the current cursor position the end of the line
+# Control + d: Delete character under the current cursor position
