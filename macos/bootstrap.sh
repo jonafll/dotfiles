@@ -72,6 +72,9 @@ curl -sSL https://github.com/jonafll/appiconupdate/releases/download/v0.2.1/appi
 # Install app-cleaner
 curl -sSL https://sunknudsen.com/static/media/privacy-guides/how-to-clean-uninstall-macos-apps-using-appcleaner-open-source-alternative/app-cleaner.sh > /usr/local/bin/app-cleaner && chmod 755 /usr/local/bin/app-cleaner
 
+# Install cheat.sh client
+curl -sSL https://cht.sh/:cht.sh > /usr/local/bin/cht && chmod 755 /usr/local/bin/cht
+
 # Install fonts
 echo "Installing fonts..."
 cp -R "$DOTFILES_DIR"/fonts/* ~/Library/Fonts/
