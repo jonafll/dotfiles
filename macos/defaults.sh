@@ -25,12 +25,6 @@ defaults write com.apple.dock "orientation" -string "bottom"
 # Show recently used apps in a separate section of the Dock
 defaults write com.apple.dock "show-recents" -bool "false"
 
-# Save screenshots to the desktop
-defaults write com.apple.screencapture location -string ~/Desktop
-
-# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
-defaults write com.apple.screencapture type -string "png"
-
 # Enable subpixel font rendering on non-Apple LCDs
 # defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
