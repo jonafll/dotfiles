@@ -1,9 +1,0 @@
----
-tags [ networking, linux ]
----
-
-# To check the iptables rules
-sudo iptables -L
-
-# To flush iptables
-sudo iptables –F

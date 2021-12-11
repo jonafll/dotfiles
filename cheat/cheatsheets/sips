@@ -1,0 +1,10 @@
+---
+syntax: bash
+tags: [ macos, icon ]
+---
+
+# Convert icon to image
+sips -s format png input.icns --out output.png
+
+# Convert image to icon
+sips -s format icns input.png --out output.icns

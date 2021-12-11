@@ -1,0 +1,214 @@
+---
+syntax: bash
+tags: [ linux ]
+---
+
+# Hardware information
+
+## Show bootup messages
+dmesg
+
+## Display free and used memory
+free
+
+## List hardware configuration information
+lshw
+
+## See information about block devices
+lsblk
+
+## Display USB devices
+lsusb
+
+## Display information about the CPU architecture
+lscpu
+
+## Show hardware information from the BIOS
+dmidecode
+
+# Users
+
+## See details about the active users
+id
+
+## Show last system logins
+last
+
+## Show a listing of last logged in users
+lastb
+
+## Show the most recent login of all users or of a given user
+lastlog
+
+## Display who is currently logged into the system
+who
+
+## List logged in users
+w
+
+## Send and display a message to all users on the system
+wall
+
+## Add a new group
+groupadd
+
+## Add a new user
+useradd
+
+## Change password
+passwd
+
+## Modify user information
+usermod
+
+## Delete a user
+userdel
+
+## Delete a group
+groupdel
+
+## Change user account and password expiry information
+chage
+
+## Get and set user limits
+ulimit
+
+## Safely edit the sudoers file
+visudo
+
+## Administer "/etc/group" and "/etc/gshadow"
+gpasswd
+
+# Process
+
+## See a snapshot of active processes
+ps
+
+## Show processes in a tree-like diagram
+pstree
+
+## Display a memory usage map of processes
+pmap
+
+## See all running processes
+top
+
+## Terminate a process under a given ID
+kill
+
+## Terminate a process under a specific name
+pkill
+
+## Terminate all processes
+killall
+
+## List and resume stopped jobs in the background
+bg
+
+## Bring the most recently suspended job to the foreground
+fg
+
+## Show or change the nice value of a running program
+nice
+
+## Display status of jobs in the current session
+jobs
+
+## List open files and the corresponding processes
+lsof
+
+# Firewall
+
+## Configuration of tables, chains and rules
+iptables
+
+## Frontend for iptables aiming to make configuration of a firewall easier
+ufw
+
+## The firewalld command line client
+firewall-cmd
+
+# Network
+
+## Display network-related information such as open connections, open socket ports, etc.
+netstat
+
+## Query name server(s) for various domain records
+nslookup
+
+## Show / manipulate routing, devices, policy routing and tunnels
+ip
+
+## Display IP addresses of all network interfaces
+ifconfig
+
+## Show and manipulate your system's ARP cache
+arp
+
+## Print the route packets trace to network host
+traceroute
+
+## Network exploration tool and security / port scanner
+nmap
+
+## Dump traffic on a network
+tcpdump
+
+# Files
+
+## List file attributes on a Linux filesystem
+lsattr
+
+## Change attributes of files or directories
+chattr
+
+## Display file and filesystem information
+stat
+
+## Set file access control lists (ACL)
+setfacl
+
+## Get file access control lists
+getfacl
+
+## Display shared library dependencies
+ldd
+
+# System information
+
+## Print details about the current machine and the operating system running on it
+uname
+
+## Tell how long the system has been running
+uptime
+
+## Show or set the system's host name
+hostname
+
+## Control the system time and date
+timedatectl
+
+## Print the username associated with the current effective user ID
+whoami
+
+## User information lookup
+finger
+
+# Disk usage
+
+## Report file system disk space usage
+df
+
+## Manage partition tables and partitions on a hard disk
+fdisk
+
+## Show disk usage
+du
+
+## Mount a filesystem
+mount
+
+
+
+
+

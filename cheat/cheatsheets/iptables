@@ -1,0 +1,50 @@
+---
+syntax: bash
+tags: [ linux, networking, firewall, security ]
+---
+
+# List iptables rules
+sudo iptables -L
+
+# List all rules in a table by line numbers
+sudo iptables –L --line-numbers
+
+# Flush the entire chain
+sudo iptables –F
+
+# Drop all traffic coming from a specific ip address
+sudo iptables –A INPUT –s 192.168.0.25 –j DROP
+
+# Drop all traffic coming from a range of ips
+sudo iptables –A INPUT –s 192.168.0.0/24 –j DROP
+
+# Delete a specific rule by line number
+sudo iptables –D INPUT 1
+
+# Block a specific protocol with rejection
+sudo iptables -A INPUT -p icmp -j REJECT
+
+# Block a specific protocol without rejection
+sudo iptables -A INPUT -p icmp -j DROP
+
+# Block a specific port
+sudo iptables -A INPUT -p tcp --dport 80 -j DROP
+
+# Block connection to a network interface
+sudo iptables -A INPUT -i enps03 -s 192.168.0.25 -j DROP
+
+# Drop all traffic going to an ip address
+sudo iptables –A OUTPUT –d 31.13.71.36 –j DROP
+
+# Block all outgoing traffic to a network range
+sudo iptables –A OUTPUT –d 31.13.71.0/24 –j DROP
+
+# Block all incoming traffic except SSH
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+sudo iptables -P INPUT DROP
+
+# Save iptables configuration (default to /etc/sysconfig/iptables)
+sudo iptables-save
+
+# Restore iptables configuration
+sudo iptables-restore < path/to/iptables_file

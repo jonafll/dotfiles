@@ -1,0 +1,43 @@
+---
+syntax: bash
+tags: [ linux, networking, firewall, security ]
+---
+
+# Get a list of all zones
+sudo firewall-cmd --get-zones
+
+# Get a list of active zones
+sudo firewall-cmd --get-active-zones
+
+# Get firewall rules for public zone
+sudo firewall-cmd --zone=public --list-all
+sudo firewall-cmd --list-all
+
+# Add a service (http)
+sudo firewall-cmd --add-service=http
+
+# Remove a service
+sudo firewall-cmd --remove-service=http
+
+# Reload the firewalld configuration
+sudo firewall-cmd --reload
+
+# Add or remove a service permanently
+sudo firewall-cmd --add-service=http --permanent
+sudo firewall-cmd --remove-service=http --permanent
+
+# Add a port
+sudo firewall-cmd --add-port=1110/tcp
+
+# Remove a port
+sudo firewall-cmd --remove-port=1110/tcp
+
+# Reject incoming traffic from an ip address
+sudo firewall-cmd --add-rich-rule='rule family="ipv4" source address=“192.168.0.25" reject'
+
+# Block and unblock ICMP incoming traffic
+sudo firewall-cmd --add-icmp-block-inversion
+sudo firewall-cmd --remove-icmp-block-inversion
+
+# Block outgoing traffic to a specific ip address
+sudo firewall-cmd --direct --add-rule ipv4 filter OUTPUT 0 -d 192.168.1.0 -j DROP

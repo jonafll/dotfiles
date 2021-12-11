@@ -1,0 +1,13 @@
+---
+syntax: bash
+tags: [ macos, clipboard ]
+---
+
+# Copy to clipboard from file
+pbcopy < file.txt
+
+# Copy to clipboard from stdin
+ps aux | pbcopy
+
+# Paste into file
+pbpaste > file.txt

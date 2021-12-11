@@ -1,0 +1,25 @@
+---
+syntax: bash
+tags: [ linux, security ]
+---
+
+# Add permission for user
+setfacl -m u:user:permissions /path/to/file
+
+# Add permissions for a group
+setfacl -m g:group:permissions /path/to/file
+
+# Allow all files or directories to inherit ACL entries from the directory it is within
+setfacl -dm entry /path/to/dir
+
+# Remove a specific entry
+setfacl -x entry /path/to/file
+
+# Add permissions for a user (user name or id):
+setfacl -m u:user:permissions
+
+# Add permissions for a group (group name or id):
+setfacl -m g:group:permissions
+
+# Remove all entries
+setfacl -b path/to/file

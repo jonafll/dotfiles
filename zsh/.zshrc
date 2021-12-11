@@ -42,6 +42,9 @@ export GPG_TTY=$(tty)
 # Go
 export GOPATH=~/.go
 
+# Change cheatsheet config path
+export CHEAT_CONFIG_PATH=~/.dotfiles/cheat/conf.yml
+
 # Adds syntax highlighting and auto suggestions
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -89,19 +92,5 @@ alias genpasswd="openssl rand -base64 24"
 # Make a detached signature with gpg
 alias sigd="gpg --armor --detach-sign"
 
-# Snippets
-
-# Show applications using a certain port
-# sudo lsof -i :80
-
-# Show disk usage for directory as sorted with human readable output
-# du -sh <DIRECTORY>/* | sort -h
-
-# Clipboard commands (macOS)
-# pbcopy < file.txt
-# ps aux | pbcopy
-# pbpaste > file.txt
-
-# Convert / process images
-# sips -s format png input.icns --out output.png
-# sips -s format icns input.png --out output.icns
+# Personal cheatsheets
+alias chtp="cheat"
