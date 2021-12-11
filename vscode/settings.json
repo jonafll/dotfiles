@@ -37,8 +37,6 @@
   "git.enableCommitSigning": true,
   "git.rebaseWhenSync": true,
 
-  "terminal.explorerKind": "external",
-  "terminal.external.osxExec": "Alacritty.app",
   "terminal.integrated.cursorBlinking": false,
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.fontSize": 13,
@@ -115,7 +113,7 @@
 
   "[go]": {
     "editor.insertSpaces": false,
-    "editor.tabSize": 2
+    "editor.tabSize": 4
   },
 
   "[rust]": {
