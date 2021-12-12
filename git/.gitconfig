@@ -14,18 +14,21 @@
 
 [alias]
 	st = status
-	co = checkout
 	cm = commit -m
+	cma = commit -am
+	co = checkout
 	cob = checkout -b
+	sw = switch
+	swc = switch -c
 	del = branch -D
 	rv = remote -v
 	res = !git reset --hard
 	done = !git push origin HEAD
-	br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+	br = branch -vv
 	unstage = reset HEAD --
 	last = log -1 HEAD --stat
 	undo = reset HEAD~1 --mixed
-	ll = log --oneline
+	ls = log --oneline
 	lal = log --oneline --graph --branches
 	conf = config --global -l
 	wip = commit -am WIP --no-verify
