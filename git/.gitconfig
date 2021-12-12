@@ -20,10 +20,12 @@
 	cob = checkout -b
 	sw = switch
 	swc = switch -c
-	del = branch -D
+	rs = restore
+	brdel = branch -D
 	rv = remote -v
-	res = !git reset --hard
-	done = !git push origin HEAD
+	resh = reset --hard
+	pu = push
+	puf = push --force
 	br = branch -vv
 	unstage = reset HEAD --
 	last = log -1 HEAD --stat
