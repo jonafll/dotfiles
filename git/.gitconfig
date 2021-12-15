@@ -23,6 +23,8 @@
 	rs = restore
 	brdel = branch -D
 	rv = remote -v
+	a = add
+	aa = add -A
 	resh = reset --hard
 	pu = push
 	puf = push --force
