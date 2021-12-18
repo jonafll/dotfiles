@@ -1,0 +1,125 @@
+---
+syntax: bash
+tags: [ bitcoin ]
+---
+
+# Address formats
+
+## Mainnet
+P2PKH: 1
+P2SH/Segwit: 3
+Bech32: bc1
+
+## Testnet
+P2PKH: n
+P2SH/Segwit: 2
+Bech32: tb1
+
+## Regtest
+P2PKH: m
+P2SH/Segwit: 2
+Bech32: bcrt
+
+# Enabling RBF
+Add a sequence variable to your UTXO inputs
+
+# Useful aliases
+alias btcdir="cd ~/.bitcoin/"
+alias bc="bitcoin-cli"
+alias bd="bitcoind"
+alias btcinfo='bitcoin-cli getwalletinfo | egrep "\"balance\""; bitcoin-cli getnetworkinfo | egrep "\"version\"|connections"; bitcoin-cli getmininginfo | egrep "\"blocks\"|errors"'
+
+# Get help
+bitcoin-cli help
+bitcoin-cli help getmininginfo
+
+# General information about bitcoin data (blockchain, mining, network, etc.)
+bitcoin-cli -getinfo
+bitcoin-cli getblockcount
+bitcoin-cli getblockchaininfo
+bitcoin-cli getmininginfo
+bitcoin-cli getnetworkinfo
+bitcoin-cli getnettotals
+bitcoin-cli getrawmempool
+
+# Wallet
+
+## Get wallet info 
+bitcoin-cli getwalletinfo
+
+## Get confirmed balance
+bitcoin-cli getbalance
+bitcoin-cli -named getbalance minconf=1
+
+## Get unconfirmed balance
+bitcoin-cli getunconfirmedbalance
+
+## List transactions
+bitcoin-cli listtransactions
+bitcoin-cli listunspent
+
+## Discover transaction
+bitcoin-cli gettransaction <txid>
+bitcoin-cli getrawtransaction <txid>
+bitcoin-cli -named getrawtransaction txid=<txid> verbose="true"
+
+## Decode rawtransaction
+bitcoin-cli decoderawtransaction <rawtxhex>
+
+## Create and send rawtransaction (txid + vout = UTXO)
+## 1. Without change address
+## 2. With change address
+## 3. Unfinished rawtransaction (fees, inputs, and outputs are calculated for you)
+bitcoin-cli createrawtransaction '''[ { "txid": "'$utxo_txid'", "vout": '$utxo_vout' } ]''' '''{ "'$recipient'": 0.0004 }'''
+bitcoin-cli createrawtransaction '''[ { "txid": "'$utxo_txid_1'", "vout": '$utxo_vout_1' }, { "txid": "'$utxo_txid_2'", "vout": '$utxo_vout_2' } ]''' outputs='''{ "'$recipient'": 0.009, "'$changeaddress'": 0.0009 }'''
+bitcoin-cli createrawtransaction '''[]''' outputs='''{ "'$recipient'": 0.0002 }'''
+
+## Sign and send rawtransaction (without or with change address)
+bitcoin-cli signrawtransactionwithwallet <rawtxhex>
+bitcoin-cli sendrawtransaction <signedtxhex>
+
+## Fund, sign and send rawtransaction (unfinished rawtransaction)
+bitcoin-cli fundrawtransaction <unfinishedtxhex>
+bitcoin-cli signrawtransactionwithwallet <rawtxhex>
+bitcoin-cli sendrawtransaction <signedtxhex>
+
+# Address
+
+## Get address info
+bitcoin-cli getaddressinfo <address>
+
+## Lists groups of addresses which have had their common ownership made public by common use as inputs or as the resulting change in past transactions
+bitcoin-cli listaddressgroupings
+
+## Get new address (default = Bech32)
+bitcoin-cli getnewaddress
+bitcoin-cli getnewaddress -addresstype legacy
+bitcoin-cli getnewaddress -addresstype p2sh-segwit
+
+## Create a multisig address (P2SH)
+## Attention: The order of keys used to create a multisig matters
+bitcoin-cli -named createmultisig nrequired=2 keys='''["<pubkey1","<pubkey2>"]'''
+
+# Another way of creating a multisig address
+bitcoin-cli -named addmultisigaddress nrequired=2 keys='''["<pubkey1>","<pubkey2>"]'''
+
+## Send amount in bitcoin (e.g. 0.001) to address
+bitcoin-cli sendtoaddress <address> <amount>
+
+## Get change address (default = Bech32)
+bitcoin-cli getrawchangeaddress
+bitcoin-cli getrawchangeaddress legacy
+bitcoin-cli getrawchangeaddress p2sh-segwit
+
+## Sign and verify message
+bitcoin-cli signmessage <address> <message>
+bitcoin-cli verifymessage <address> <signature> <message>
+
+# Export and import privaty key
+bitcoin-cli dumpprivkey <address>
+bitcoin-cli importprivkey <pkey>
+
+# Add an address or script (in hex) that can be watched as if it were in your wallet but cannot be used to spend
+bitcoin-cli importaddress <address>
+bitcoin-cli -named importaddress address=<address> rescan="false"
+bitcoin-cli -named importaddress address=<address> label="test" rescan="false"
