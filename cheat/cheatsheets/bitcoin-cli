@@ -20,11 +20,8 @@ P2PKH: m
 P2SH/Segwit: 2
 Bech32: bcrt
 
-# Enabling RBF
-Add a sequence variable to your UTXO inputs
-
 # Useful aliases
-alias btcdir="cd ~/.bitcoin/"
+alias btcdir="cd ~/.bitcoin"
 alias bc="bitcoin-cli"
 alias bd="bitcoind"
 alias btcinfo='bitcoin-cli getwalletinfo | egrep "\"balance\""; bitcoin-cli getnetworkinfo | egrep "\"version\"|connections"; bitcoin-cli getmininginfo | egrep "\"blocks\"|errors"'
