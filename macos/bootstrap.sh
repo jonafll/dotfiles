@@ -37,10 +37,12 @@ ln -s "$DOTFILES_DIR"/npm/.npmrc ~/.npmrc
 ln -s "$DOTFILES_DIR"/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
 
 if ! [ -d ~/Library/Application\ Support/Code ]; then
-  echo "Visual Studio Code is not installed"
-  echo "Execute this command manually: ln -s ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json"
+  echo "Visual Studio Code is not installed. Execute these commands manually:"
+  echo "ln -s ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json"
+  echo "ln -s ~/.dotfiles/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json"
 else
   ln -s "${DOTFILES_DIR}"/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+  ln -s "${DOTFILES_DIR}"/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 fi
 
 # Install oh-my-zsh
