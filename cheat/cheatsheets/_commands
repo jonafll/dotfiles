@@ -136,6 +136,9 @@ netstat
 ## Query name server(s) for various domain records
 nslookup
 
+## DNS lookup utility
+dig
+
 ## Show / manipulate routing, devices, policy routing and tunnels
 ip
 
@@ -147,6 +150,9 @@ arp
 
 ## Print the route packets trace to network host
 traceroute
+
+## Manually manipulate the routing tables
+route
 
 ## Network exploration tool and security / port scanner
 nmap
