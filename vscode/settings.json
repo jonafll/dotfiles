@@ -4,15 +4,19 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "icons-carbon",
   "workbench.colorCustomizations": {
-    "[Atom One Dark]": {
-      "focusBorder": "#00000000"
-    },
     "[Nord]": {
+      "focusBorder": "#00000000",
       "activityBar.border": "#3b4252",
       "activityBarBadge.background": "#81a1c1",
       "activityBarBadge.foreground": "#eceff4",
+      "list.activeSelectionBackground": "#3b4252",
       "list.activeSelectionForeground": "#eceff4",
-      "list.activeSelectionBackground": "#474e5ecc"
+      "list.focusBackground": "#3b4252",
+      "list.focusForeground": "#eceff4",
+      "list.inactiveSelectionBackground": "#3b4252",
+      "list.inactiveSelectionForeground": "#eceff4",
+      "sideBarSectionHeader.background": "#2e3440",
+      "sideBarSectionHeader.border": "#3b4252"
     }
   },
   "workbench.startupEditor": "newUntitledFile",
