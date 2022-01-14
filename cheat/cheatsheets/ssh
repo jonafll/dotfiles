@@ -1,0 +1,28 @@
+---
+syntax: bash
+tags: [ networking, ssh ]
+---
+
+# Related tools
+ssh-keygen
+ssh-add
+ssh-copy-id
+
+# Log in to a remote host
+ssh remote_host
+ssh username@remote_host
+
+# Log in to remote host with a different port
+ssh -p 22222 username@remote_host
+
+# Execute a command on a remote host
+ssh username@remote_host 'uptime'
+
+# Establish a local tunnel on port 8888 to a remote host on port 80
+ssh -f -N -L 8888:your_domain:80 username@remote_host
+
+# Establish a remote tunnel on port 8888 to a remote host on port 80
+ssh -f -N -R 8888:your_domain:80 username@remote_host
+
+# Establish a dynamic tunnel (SOCKS Proxy) on port 7777 to a remote host
+ssh -f -N -D 7777 username@remote_host
