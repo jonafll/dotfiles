@@ -12,11 +12,14 @@ ssh-copy-id
 ssh remote_host
 ssh username@remote_host
 
-# Log in to remote host with a different port
+# Log in to a remote host with a different port
 ssh -p 22222 username@remote_host
 
 # Execute a command on a remote host
 ssh username@remote_host 'uptime'
+
+# Log in to a remote host via jump host
+ssh -J username@jump_host username@dest_host
 
 # Establish a local tunnel on port 8888 to a remote host on port 80
 ssh -f -N -L 8888:your_domain:80 username@remote_host
