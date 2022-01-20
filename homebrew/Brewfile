@@ -1,50 +1,17 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
-
-# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
-brew "clang-format"
-
-# Modern replacement for 'ls'
-brew "exa"
-
-# Perl lib for reading and writing EXIF metadata
-brew "exiftool"
-
-# macOS CLI for managing custom icons for files and folders
-brew "fileicon"
-
-# Distributed revision control system
-brew "git"
-
-# GNU Pretty Good Privacy (PGP) package
-brew "gnupg"
-
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
-
-# Improved top (interactive process viewer)
-brew "htop"
-
-# Lightweight and flexible command-line JSON processor
-brew "jq"
-
-# Bitcoin command-line tool
-brew "libbitcoin-explorer"
-
-# Simple tool to make locally trusted development certificates
-brew "mkcert"
-
-# Platform built on V8 to build network applications
-brew "node"
-
-# Pinentry for GPG on Mac
-brew "pinentry-mac"
-
-# Fish-like fast/unobtrusive autosuggestions for zsh
-brew "zsh-autosuggestions"
-
-# Fish shell like syntax highlighting for zsh
-brew "zsh-syntax-highlighting"
-
-# Create and view interactive cheat sheets for *nix commands
 brew "cheat"
+brew "clang-format"
+brew "exa"
+brew "fileicon"
+brew "git"
+brew "gnupg"
+brew "go"
+brew "htop"
+brew "jq"
+brew "mkcert"
+brew "node"
+brew "pinentry-mac"
+brew "rust"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
