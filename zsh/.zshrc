@@ -45,6 +45,12 @@ export GOPATH=~/.go
 # Change cheatsheet config path
 export CHEAT_CONFIG_PATH=~/.dotfiles/cheat/conf.yml
 
+# Change homebrew bundle file path
+export HOMEBREW_BUNDLE_FILE=~/.dotfiles/homebrew/Brewfile
+
+# Set icon path
+export ICN_PATH=~/.dotfiles/icons
+
 # Adds syntax highlighting and auto suggestions
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -78,9 +84,6 @@ alias pscpu='ps aux | sort -nr -k 3'
 alias zshconf="vim ~/.zshrc"
 alias vimconf="vim ~/.vimrc"
 alias alacrittyconf="vim ~/.dotfiles/alacritty/alacritty.yml"
-
-# Update icons
-alias appiconupdate="appiconupdate ~/.dotfiles/icons"
 
 # Networking
 alias netinfo="networksetup -getinfo Wi-Fi"
