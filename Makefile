@@ -1,4 +1,12 @@
-ls-ext:
+.PHONY: code-ls code-inst brew-dump brew-clean brew-check all-update
+code-ls:
 	./vscode/ls-ext.sh
-inst-ext:
+code-inst:
 	./vscode/inst-ext.sh
+brew-dump:
+	brew bundle dump --force
+brew-clean:
+	brew bundle cleanup
+brew-check:
+	brew bundle check
+all-update: code-ls brew-dump
