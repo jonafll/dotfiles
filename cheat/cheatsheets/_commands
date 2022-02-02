@@ -160,7 +160,16 @@ nmap
 ## Dump traffic on a network
 tcpdump
 
+## Reading from and writing to network connections using TCP or UDP
+nc
+
 # Files
+
+## Determine file type
+file
+
+## Cut out fields from stdin or files
+cut
 
 ## List file attributes on a Linux filesystem
 lsattr
@@ -179,6 +188,12 @@ getfacl
 
 ## Display shared library dependencies
 ldd
+
+## Create a hexadecimal representation (hexdump) from a binary file, or vice-versa
+xxd
+
+## Compare the differences between and optionally merge 2 files
+sdiff
 
 # System information
 
@@ -213,3 +228,17 @@ du
 
 ## Mount a filesystem
 mount
+
+# Utilities
+
+## List all commands, aliases, functions, keywords
+compgen
+
+## Display the kind of command the shell will execute
+type
+
+## Write to standard output and simultaneously redirect that same output to a file
+tee
+
+## Execute commands from a file in the current shell. It may only available as '.' in older shells like Bourne shell.
+source
