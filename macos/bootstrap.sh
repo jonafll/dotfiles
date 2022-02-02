@@ -25,8 +25,8 @@ fi
 xcode-select --install
 
 # Create .config
-if ! [ -d ~/.config ]; then
-  mkdir ~/.config
+if ! [ -d ~/.config/alacritty ]; then
+  mkdir -p ~/.config/alacritty
 fi
 
 # Symlink configs
