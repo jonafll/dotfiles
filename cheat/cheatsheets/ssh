@@ -18,6 +18,9 @@ ssh -p 22222 username@remote_host
 # Execute a command on a remote host
 ssh username@remote_host 'uptime'
 
+# Execute a local script on the remote host
+ssh username@remote_host bash < ./local_script.sh
+
 # Log in to a remote host via jump host
 ssh -J username@jump_host username@dest_host
 
@@ -29,3 +32,8 @@ ssh -f -N -R 8888:your_domain:80 username@remote_host
 
 # Establish a dynamic tunnel (SOCKS Proxy) on port 7777 to a remote host
 ssh -f -N -D 7777 username@remote_host
+
+# (1) Setup a reverse SSH connection on the remote host
+# (2) Establish a reverse SSH connection after the remote host has connected
+ssh -R 12345:localhost:22 username@remote_host
+ssh localhost -p 12345
