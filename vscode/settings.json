@@ -33,13 +33,10 @@
   "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "editor.smoothScrolling": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
 
   "files.eol": "\n",
   "files.insertFinalNewline": true,
-
-  "git.confirmSync": false,
-  "git.enableCommitSigning": true,
-  "git.rebaseWhenSync": true,
 
   "terminal.integrated.cursorBlinking": false,
   "terminal.integrated.cursorStyle": "block",
