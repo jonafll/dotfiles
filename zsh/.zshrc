@@ -1,7 +1,16 @@
 # Configuration for zsh
 
+# Set prompt
 local ret_status="%(?:%{$fg_bold[green]%}ƒ:%{$fg_bold[red]%}ƒ)"
 PROMPT='${ret_status} %{$fg[white]%}%c%{$reset_color%} '
+
+# Set homebrew environment variables
+eval $(brew shellenv)
+
+# ARM config
+if [ `machine` = arm64e ]; then
+  export PATH=$HOMEBREW_PREFIX/bin:$PATH
+fi
 
 # Init oh-my-zsh
 export ZSH=~/.oh-my-zsh
@@ -51,9 +60,9 @@ export HOMEBREW_BUNDLE_FILE=~/.dotfiles/homebrew/Brewfile
 # Set icon path
 export ICN_PATH=~/.dotfiles/icons
 
-# Adds syntax highlighting and auto suggestions
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Add syntax highlighting and auto suggestions
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Alias
 
@@ -73,6 +82,9 @@ alias ls="exa --color=always"
 alias lal="exa -alg --color=always"
 alias la="exa -a --color=always"
 alias ll="exa -lg --color=always"
+
+# Allow nested directories by default
+alias mkdir="mkdir -p"
 
 # ps
 alias psa="ps aux"
