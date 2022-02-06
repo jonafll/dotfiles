@@ -270,6 +270,7 @@ key_bindings:
   - { key: Left, mods: Alt, chars: "\x1bb" } # One word left
   - { key: Right, mods: Alt, chars: "\x1bf" } # One word right
   - { key: Back, mods: Super, chars: "\x15" } # Delete word (option) / line (command)
+  - { key: N, mods: Command, action: CreateNewWindow}
 
 # Shortcuts
 # Control + w: Delete previous word from the current cursor position
