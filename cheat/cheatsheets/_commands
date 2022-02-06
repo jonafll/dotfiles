@@ -3,6 +3,23 @@ syntax: bash
 tags: [ linux ]
 ---
 
+# General
+
+## List all commands, aliases, functions, keywords
+compgen
+
+## Display the kind of command the shell will execute
+type
+
+## Write to standard output and simultaneously redirect that same output to a file
+tee
+
+## Execute commands from a file in the current shell. It may only available as '.' in older shells like Bourne shell.
+source
+
+## Ignore aliases
+command
+
 # Hardware information
 
 ## Show bootup messages
@@ -228,17 +245,3 @@ du
 
 ## Mount a filesystem
 mount
-
-# Utilities
-
-## List all commands, aliases, functions, keywords
-compgen
-
-## Display the kind of command the shell will execute
-type
-
-## Write to standard output and simultaneously redirect that same output to a file
-tee
-
-## Execute commands from a file in the current shell. It may only available as '.' in older shells like Bourne shell.
-source
