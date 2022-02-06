@@ -6,11 +6,11 @@ PROMPT='${ret_status} %{$fg[white]%}%c%{$reset_color%} '
 
 # ARM config
 if [ `machine` = arm64e ]; then
-  export HOMEBREW_PREFIX=/opt/homebrew
-  export PATH=$HOMEBREW_PREFIX/bin:$PATH
-else
-  export HOMEBREW_PREFIX=/usr/local
+  export PATH=/opt/homebrew/bin:$PATH
 fi
+
+# Set homebrew environment variables
+eval $(brew shellenv)
 
 # Init oh-my-zsh
 export ZSH=~/.oh-my-zsh
@@ -85,6 +85,9 @@ alias ll="exa -lg --color=always"
 
 # Allow nested directories by default
 alias mkdir="mkdir -p"
+
+# Disable progress meter but still show error messages
+alias curl="curl -sS"
 
 # ps
 alias psa="ps aux"
