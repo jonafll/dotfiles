@@ -4,12 +4,12 @@
 local ret_status="%(?:%{$fg_bold[green]%}ƒ:%{$fg_bold[red]%}ƒ)"
 PROMPT='${ret_status} %{$fg[white]%}%c%{$reset_color%} '
 
-# Set homebrew environment variables
-eval $(brew shellenv)
-
 # ARM config
 if [ `machine` = arm64e ]; then
+  export HOMEBREW_PREFIX=/opt/homebrew
   export PATH=$HOMEBREW_PREFIX/bin:$PATH
+else
+  export HOMEBREW_PREFIX=/usr/local
 fi
 
 # Init oh-my-zsh
