@@ -21,20 +21,18 @@ scrolling:
 font:
   normal:
     family: Source Code Pro
-    # family: Hack Nerd Font Mono
     style: Regular
   bold:
     family: Source Code Pro
-    # family: Hack Nerd Font Mono
-    style: Bold
+    # style: Bold
+    style: Regular
   italic:
     family: Source Code Pro
-    # family: Hack Nerd Font Mono
     style: Italic
   bold_italic:
     family: Source Code Pro
-    # family: Hack Nerd Font Mono
-    style: Bold Italic
+    # style: Bold Italic
+    style: Italic
   size: 15.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
@@ -270,8 +268,7 @@ key_bindings:
   - { key: Left, mods: Alt, chars: "\x1bb" } # One word left
   - { key: Right, mods: Alt, chars: "\x1bf" } # One word right
   - { key: Back, mods: Super, chars: "\x15" } # Delete word (option) / line (command)
-  - { key: N, mods: Command, action: CreateNewWindow}
-
+  - { key: N, mods: Command, action: CreateNewWindow }
 # Shortcuts
 # Control + w: Delete previous word from the current cursor position
 # Control + k: Delete the text from the current cursor position the end of the line
