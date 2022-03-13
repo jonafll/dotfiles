@@ -50,9 +50,20 @@
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, Inter, sans-serif",
 
   // Extensions
+
+  // GitLens
   "gitlens.hovers.currentLine.over": "annotation",
+
+  // Prettier
   "prettier.arrowParens": "always",
+
+  // Go
   "go.autocompleteUnimportedPackages": true,
+  "go.toolsManagement.checkForUpdates": "local",
+  "go.editorContextMenuCommands": {
+    "playground": false,
+    "debugTestAtCursor": false
+  },
 
   // Theme and colors
   "material-icon-theme.activeIconPack": "react",
@@ -60,7 +71,7 @@
   "material-icon-theme.folders.theme": "specific",
   "material-icon-theme.saturation": 0.6,
 
-  // Languages
+  // Language settings
   "[shellscript]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2
@@ -85,7 +96,8 @@
   },
 
   "[graphql]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
 
   "[markdown]": {
