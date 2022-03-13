@@ -50,6 +50,7 @@ export GPG_TTY=$(tty)
 
 # Go
 export GOPATH=~/.go
+export PATH=$GOPATH/bin:$PATH
 
 # Change cheatsheet config path
 export CHEAT_CONFIG_PATH=~/.dotfiles/cheat/conf.yml
@@ -112,3 +113,9 @@ alias sigd="gpg --armor --detach-sign"
 
 # Personal cheatsheets
 alias chtp="cheat"
+
+# Flush DNS cache
+alias flushdns="dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+# Create self signed certificate for development
+alias selfcert="openssl req -nodes -new -x509 -keyout private.key -out public.cert"
