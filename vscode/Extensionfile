@@ -9,6 +9,7 @@ eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 golang.go
+mike-co.import-sorter
 ms-azuretools.vscode-docker
 PKief.material-icon-theme
 rust-lang.rust
