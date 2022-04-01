@@ -10,8 +10,10 @@ brew "go"
 brew "htop"
 brew "jq"
 brew "mkcert"
-brew "node"
+brew "node", link: false
+brew "node@16", link: true
 brew "pinentry-mac"
 brew "rust"
+brew "yarn"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
