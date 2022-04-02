@@ -1,0 +1,58 @@
+---
+syntax: bash
+tags: [ bitcoin ]
+---
+
+# Address types
+
+## Mainnet
+P2PKH: 1
+P2SH/Wrapped-Segwit: 3
+Bech32/Native-Segwit: bc1q
+Bech32m/Taproot: bc1p
+
+## Testnet
+P2PKH: n
+P2SH/Wrapped-Segwit: 2
+Bech32/Native-Segwit: tb1q
+Bech32m/Taproot: tb1p
+
+## Regtest
+P2PKH: m
+P2SH/Wrapped-Segwit: 2
+Bech32/Native-Segwit: bcrt
+Bech32m/Taproot: ?
+
+# Output types
+pubkey: Script that pays to a public key directly (P2PK, <pubkey> OP_CHECKSIG); it has no corresponding address.
+pubkeyhash: Script that pays to a public key's hash (P2PKH, OP_DUP OP_HASH160 <pubkeyhash> OP_EQUALVERIFY OP_CHECKSIG), corresponding to a 1... address.
+scripthash: Script that pays to a script hash as defined by BIP16 (P2SH, OP_HASH160 <scripthash> OP_EQUAL), corresponding to a 3... address (defined in BIP13)
+multisig: A (bare) k-of-n multisig script of the form <k> <pubkey1> <pubkey2> <pubkey3> ... <pubkey_n> <n> OP_CHECKMULTISIG; it has no correspondign address, and is very uncommon now.
+witness_v0_keyhash: Native P2WPKH output defined in BIP141 (OP_0 <pubkeyhash>), corresponding to a 42-character bc1q... address (defined in BIP173).
+witness_v0_scripthash: Native P2WSH output defined in BIP141 (OP_0 <scripthash>) corresponding to a 62-character bc1q... address (defined in BIP173).
+witness_v1_taproot: P2TR output defined in BIP341 (OP_1 <tweaked pubkey>) corresponding to a 62-character bc1p... address (defined in BIP350).
+witness_unknown: Native segwit output that isn't P2WPKH, P2WSH, or P2TR (OP_<n> <payload>, for n=1..17 and payload between 2 and 40 characters), corresponding any other BIP350 address.
+nulldata: OP_RETURN output, burning coins.
+nonstandard: Anything not in the list above
+
+# Units
+
+## Size in bytes
+The size in [bytes] of a transaction refers to the raw byte length of its serialized format. 
+It is used to measure the data footprint of transactions when relayed on the network or stored on disk.
+
+## Size in vbytes
+The vsize in [vbytes] refers to a transaction's weighted size under segwit's rules. 
+It is used to compare how much blockweight needs to be allocated to confirm a transaction.
+
+vsize [vB] = weight [wu] / 4
+
+## Weight
+The transaction size was measured in bytes before segwit. Since segwit, the relevant measure is transaction weight 
+which is either given in virtualbytes (vbyte, vB) or weight units (wu) where 4 wu = 1 vB.
+For segwit transactions, which do include witness data, the resulting transaction weight is strictly smaller than 4 × size due to the witness bytes contributing at a lower factor. 
+For non-segwit transactions, their size is equal to their virtualsize 1 B = 1 vB.
+
+## Links
+https://bitcoin.stackexchange.com/questions/89385/is-there-a-difference-between-bytes-and-virtual-bytes-vbytes
+https://bitcoin.stackexchange.com/questions/84004/how-do-virtual-size-stripped-size-and-raw-size-compare-between-legacy-address-f/84006#84006
