@@ -3,23 +3,6 @@ syntax: bash
 tags: [ bitcoin ]
 ---
 
-# Address formats
-
-## Mainnet
-P2PKH: 1
-P2SH/Segwit: 3
-Bech32: bc1
-
-## Testnet
-P2PKH: n
-P2SH/Segwit: 2
-Bech32: tb1
-
-## Regtest
-P2PKH: m
-P2SH/Segwit: 2
-Bech32: bcrt
-
 # Useful aliases
 alias btcdir="cd ~/.bitcoin"
 alias bc="bitcoin-cli"
@@ -62,14 +45,6 @@ bitcoin-cli -named getrawtransaction txid=<txid> verbose="true"
 
 ## Decode rawtransaction
 bitcoin-cli decoderawtransaction <rawtxhex>
-
-## Create and send rawtransaction (txid + vout = UTXO)
-## 1. Without change address
-## 2. With change address
-## 3. Unfinished rawtransaction (fees, inputs, and outputs are calculated for you)
-bitcoin-cli createrawtransaction '''[ { "txid": "'$utxo_txid'", "vout": '$utxo_vout' } ]''' '''{ "'$recipient'": 0.0004 }'''
-bitcoin-cli createrawtransaction '''[ { "txid": "'$utxo_txid_1'", "vout": '$utxo_vout_1' }, { "txid": "'$utxo_txid_2'", "vout": '$utxo_vout_2' } ]''' outputs='''{ "'$recipient'": 0.009, "'$changeaddress'": 0.0009 }'''
-bitcoin-cli createrawtransaction '''[]''' outputs='''{ "'$recipient'": 0.0002 }'''
 
 ## Sign and send rawtransaction (without or with change address)
 bitcoin-cli signrawtransactionwithwallet <rawtxhex>
@@ -120,3 +95,6 @@ bitcoin-cli importprivkey <pkey>
 bitcoin-cli importaddress <address>
 bitcoin-cli -named importaddress address=<address> rescan="false"
 bitcoin-cli -named importaddress address=<address> label="test" rescan="false"
+
+# Decode a bitcoin script
+bitcoin-cli decodescript <script>
