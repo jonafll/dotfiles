@@ -90,7 +90,59 @@ https://learnmeabitcoin.com/technical/script
 
 # Mining
 
+# RBF
+
 # Timelocks
+
+|                           | Absolute Timelock   | Relative Timelock   |
+|---------------------------|---------------------|---------------------|
+| Transaction Level         | nLockTime           | nSequence           |
+| UTXO Level (Script Level) | CheckLockTimeVerify | CheckSequenceVerify |
+
+## Absolute Timelock
+The locktime will be set in an absolute way by either block height or by the time (Unix timestamp).
+
+nLockTime = 0: Transaction can be added into a block and be appended to the blockchain immediately
+nLockTime < 500,000,000: Block height
+nLockTime > 500,000,000: Unix timestamp
+
+CheckLockTimeVerify (CLTV) was added to Bitcoin by a soft fork in December 2015, based on BIP65.
+The difference to nLockTime is that CLTV restricts the UTXO to be spendable only after the specified time/blocks has elapsed/been generated, while nLockTime 
+limits the transaction to be valid and can be added to the block / blockchain after certain amount of time.
+When the CLTV opcode is called, it will cause the script to fail unless the nLockTime on the transaction is equal to or greater than the time parameter provided to the CLTV opcode.
+
+## Sequence Numbers
+nSequence is used as an opt-in mechanism for absolute timelock, relative timelock and rbf. In order to use absolute timelock, you need to set the nSequence value.
+
+nSequence between 0 and 2,147,483,647: Enables relative timelock, absolute timelock and RBF
+nSequence between 2,147,483,648 and 4,294,967,293: Enables RBF and absolute timelock
+nSequence = 4,294,967,294: Preferred value for absolute timelock (disables RBF and relative timelock)
+nSequence < 4,294,967,294: Enables RBF (preferred value is 1)
+nSequence < 4,026,531,840: Enables relative timelock
+
+## Relative Timelock
+The relative timelock can also be presented by either block height or by the time. 
+If the timelock is interpreted as the block height, the timelock will be like after x blocks. 
+If it is interpreted as the time, it will be set as after x seconds.
+
+The relative timelocks were activated at May 2016 as a soft fork upgrade, based on BIP68, BIP112 and BIP113.
+Relative timelocks are much more flexible, resticting transactions/UTXOs to be valid/spendable after the relative time has elapsed, based on the time 
+that the parent blocks or transactions to be added on the blockchain.
+
+CheckSequenceVerify (CSV) provides for relative locktime the same feature CLTV provides for absolute locktime.
+It specifies how long an output must be part of the blockchain before an input spending it may be added to the blockchain.
+CheckSequenceVerify allows locking for at most 65535 blocks (about 455 days) or for at most 65535*512 seconds (about 388 days).
+
+## Transaction Level
+Defines the earliest time that the transaction can be added into the blockchain. This allows the signer to create a transaction, which will only be valid in the future.
+
+## UTXO or Script Level
+This kind of timelock will be added into the script of the UTXO, instead of being a field of the transaction. 
+It allows the UTXO to be spendable only after the specified time/blocks have elapsed/been generated.
+
+## Links
+https://en.bitcoin.it/wiki/Timelock
+https://github.com/BlockchainCommons/Learning-Bitcoin-from-the-Command-Line/blob/master/08_1_Sending_a_Transaction_with_a_Locktime.md
 
 # Units
 
