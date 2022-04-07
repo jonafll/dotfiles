@@ -64,6 +64,14 @@
     "debugTestAtCursor": false
   },
 
+  // Typescript
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+
+  // Import Sorter
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.sortConfiguration.removeUnusedImports": true,
+  "importSorter.sortConfiguration.removeUnusedDefaultImports": true,
+
   // Theme and colors
   "material-icon-theme.activeIconPack": "react",
   "material-icon-theme.folders.color": "#616e88",
