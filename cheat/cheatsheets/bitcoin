@@ -21,19 +21,76 @@ Bech32m/Taproot: tb1p
 P2PKH: m
 P2SH/Wrapped-Segwit: 2
 Bech32/Native-Segwit: bcrt
-Bech32m/Taproot: ?
+Bech32m/Taproot: TODO
 
-# Output types
-pubkey: Script that pays to a public key directly (P2PK, <pubkey> OP_CHECKSIG); it has no corresponding address.
-pubkeyhash: Script that pays to a public key's hash (P2PKH, OP_DUP OP_HASH160 <pubkeyhash> OP_EQUALVERIFY OP_CHECKSIG), corresponding to a 1... address.
-scripthash: Script that pays to a script hash as defined by BIP16 (P2SH, OP_HASH160 <scripthash> OP_EQUAL), corresponding to a 3... address (defined in BIP13)
-multisig: A (bare) k-of-n multisig script of the form <k> <pubkey1> <pubkey2> <pubkey3> ... <pubkey_n> <n> OP_CHECKMULTISIG; it has no correspondign address, and is very uncommon now.
-witness_v0_keyhash: Native P2WPKH output defined in BIP141 (OP_0 <pubkeyhash>), corresponding to a 42-character bc1q... address (defined in BIP173).
-witness_v0_scripthash: Native P2WSH output defined in BIP141 (OP_0 <scripthash>) corresponding to a 62-character bc1q... address (defined in BIP173).
-witness_v1_taproot: P2TR output defined in BIP341 (OP_1 <tweaked pubkey>) corresponding to a 62-character bc1p... address (defined in BIP350).
-witness_unknown: Native segwit output that isn't P2WPKH, P2WSH, or P2TR (OP_<n> <payload>, for n=1..17 and payload between 2 and 40 characters), corresponding any other BIP350 address.
-nulldata: OP_RETURN output, burning coins.
-nonstandard: Anything not in the list above
+# Script
+
+## Flow
+The unlocking script (scriptSig) will be executed first. Then the locking script (scriptPubKey) will be executed.
+<UNLOCKING SCRIPT> <LOCKING SCRIPT>
+
+The script is valid if a non-zero number is on top of the stack.
+The script is invalid if 0 is left on top of the stack or the stack is empty.
+
+## Standard locking-scripts
+P2PK: <PUBKEY> OP_CHECKSIG
+P2PKH: OP_DUP OP_HASH160 <PUBKEYHASH> OP_EQUALVERIFY OP_CHECKSIG
+P2MS: <M> <PUBKEY>... <N> CHECKMULTISIG (m of n)
+P2SH: OP_HASH160 <SCRIPTHASH> OP_EQUAL
+P2WPKH: TODO
+P2WSH: TODO
+P2TR: TODO
+NULLDATA: OP_RETURN <DATA>
+
+## Operators
+
+### Stack
+OP_DUP
+OP_IFDUP
+OP_DROP
+OP_PICK
+
+### Bitwise Logic
+OP_AND
+OP_OR
+OP_XOR
+OP_EQUAL
+OP_EQUALVERIFY
+
+### Flow control
+OP_IF
+OP_ELSE
+OP_ENDIF
+OP_VERIFY
+OP_RETURN
+
+### Locktime
+OP_CHECKLOCKTIMEVERIFY
+OP_CHECKSEQUENCEVERIFY
+
+### Crypto
+OP_RIPEMD160
+OP_SHA256
+OP_HASH160
+OP_HASH256
+OP_CHECKSIG
+OP_CHECKSIGVERIFY
+OP_CHECKMULTISIG
+OP_CHECKMULTISIGVERIFY
+
+## Links
+https://en.bitcoin.it/wiki/Transaction
+https://en.bitcoin.it/wiki/Script
+https://en.bitcoin.it/wiki/OP_CHECKSIG
+https://learnmeabitcoin.com/technical/script
+
+# Keys
+
+# Addresses
+
+# Mining
+
+# Timelocks
 
 # Units
 
