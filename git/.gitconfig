@@ -36,6 +36,7 @@
 	lal = log --oneline --graph --branches
 	conf = config --global -l
 	wip = commit -am WIP --no-verify
+	get = cherry-pick --no-commit
 	
 [pull]
 	ff = only
