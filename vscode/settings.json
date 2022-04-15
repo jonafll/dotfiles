@@ -64,8 +64,15 @@
     "debugTestAtCursor": false
   },
 
+  // Javascript
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "javascript.suggest.completeFunctionCalls": true,
+
   // Typescript
   "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.surveys.enabled": false,
 
   // Import Sorter
   "importSorter.generalConfiguration.sortOnBeforeSave": true,
