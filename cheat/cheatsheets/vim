@@ -1,0 +1,271 @@
+---
+syntax: bash
+tags: [ vim, editor ]
+---
+
+# Motion
+
+## Move forward word by word
+w
+
+## Move back word by word
+b
+
+## Move forward word by word (skip punctuation)
+W
+
+## Move back word by word (skip punctuation)
+B
+
+## Move forward word by word (end of a word)
+e
+
+## Move forward one word at a time (end of a word, skip punctuation)
+E
+
+## Move forward block by block (cursor is then always located after a point)
+)
+
+## Move back block by block (cursor is then always located after a point)
+(
+
+## Jump to the end of a line
+$
+
+## Jump to the beginning of a line
+0
+
+## Jump to the beginning of the document
+gg
+
+## Jump to the end of the document
+G
+
+## Jump to [line]
+[line] gg
+
+## Jump to the beginning of a line (first character without space / indentation)
+^
+
+## Jump to the next [character]. With ; you can jump further
+f [character]
+
+## Jump to the next [character], but one position before it
+t [character]
+
+## Move paragraph by paragraph
+}
+
+## Move forward page by page
+Strg + f
+
+## Move back page by page
+Strg + b
+
+## Jump back jumplist
+Strg + o
+
+## Jump forward jumplist
+Strg + i
+
+# Operators (Normal Mode)
+
+## Insert Mode (before the current cursor position)
+i
+
+## Insert Mode (after the current cursor position)
+a
+
+## Insert Mode (at the beginning of the line)
+I
+
+## Insert Mode (at the end of the line)
+A
+
+## Insert Mode (next line)
+o
+
+## Insert Mode (above the current line)
+O
+
+## Visual Mode
+v
+
+## Visual Line Mode
+V
+
+## Visual Block Mode
+Strg + v
+
+## Replace Mode
+R
+
+## Undo
+u
+
+## Redo
+Strg + r
+
+## Indentation to the right
+>
+
+## Indentation to the left
+<
+
+## Jump to the last insert position
+gi
+
+## Change operator (switches directly to insert mode)
+c
+
+## Replace character on current cursor
+cl
+
+## Replace whole line
+cc
+
+## Replace word
+cw
+
+## Replace sentence
+c)
+
+## Replace paragraph
+c}
+
+## Replace inclusive [character]
+cf[character]
+
+## Replace exclusive [character]
+ct[character]
+
+## Delete everything after the cursor
+C
+
+## Replace Operator
+r
+
+## Replace character with [character] at current cursor position
+r[character]
+
+## Delete Operator
+d
+
+## Delete whole line
+dd -> Ganze Zeile löschen
+
+## Delete word
+dw -> Wort löschen
+
+## Delete to the end of the sentence
+d)
+
+## Delete character on cursor
+dl
+
+## Delete character on cursor
+x
+
+## Tilde operator (reverse upper/lower case)
+~
+
+# Yank and Put
+
+## Copy whole line
+yy
+
+## Insert line below cursor
+p
+
+## Insert line above cursor
+P
+
+## Copy word
+yw
+
+# Text objects (independent of the cursor, context-related)
+
+## Delete a word (inclusive space)
+daw
+
+## Delete inside word (exclusive space)
+diw
+
+## Delete a paragraph
+dap
+
+## Delete inside paragraph
+dip
+
+## Delete a sentence
+das
+
+## Delete inside sentence
+dis
+
+## Delete inside [character]
+di[character]
+
+## Delete [character]
+da[character]
+
+# Window Commands
+# Format: Strg + w[Action]
+
+## Horizontal Split
+Strg + ws 
+
+## Vertical Split
+Strg + wv
+
+## Window horizontal up
+Strg + w+
+
+## Window horizontal down
+Strg.+ w-
+
+## Window vertical to the left
+Strg.+ w<
+
+## Window vertical to the right
+Strg + w>
+
+## Make all windows the same size
+Strg + w=
+
+## Maximize window
+Strg + w_
+
+# Tab
+
+## Change tab
+gt
+
+## Go back tab
+gT
+
+# Commands
+
+## Show jumplist
+:jumps
+
+## Open / create file (load buffer)
+:e [file]
+
+## Show buffer
+:buffers
+
+## Switch to file
+:b [file]
+
+## Unload buffer
+:bdelete
+
+## Hide window
+:hide
+
+## New tab
+:tabnew
+
+## Close tab
+:tabclose
