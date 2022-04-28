@@ -3,7 +3,117 @@ syntax: bash
 tags: [ bitcoin ]
 ---
 
-# Address types
+# Keys and Addresses
+
+## Private Key
+Simply put, a private key is just a randomly generated 256-bit number. When generating the private key (k), the most important step is to choose a secure source for the entropy ("randomness").
+Usually, the random generator of the operating system or a special hardware component in some hardware wallets is used for this, but you can also flip a coin 256 times.
+The private key can be represented in different formats, e.g. binary, decimal or hexadecimal.
+
+## Public Key
+The public key (K) is calculated from the private key via a scalar multiplication of the points (x, y) of an elliptic curve. This operation is irreversible.
+G is a constant point (generator point), which is defined as part of the secp256k1 standard.
+
+K = k * G
+K = SECP256K1(k)
+
+A public key is just the x and y coordinate of a point on the elliptic curve and is usually stored in hexadecimal format.
+There are two formats for public keys: Uncompressed and compressed.
+
+### Uncompressed
+Originally, Bitcoin used uncompressed public keys consisting of the x and y coordinates preceded by the constant 04 as a prefix.
+
+K_Uncompressed (65 bytes) = prefix (1 byte) + x coordinate (32 bytes) + y coordinate (32 bytes)
+
+### Compressed
+Because the elliptic curve is symmetrical along its x-axis, each x coordinate will only ever have one of two possible y coordinates.
+This means that we do not need to use the y coordinate and it is possible to represent the public key only by the x coordinate and a prefix, making it shorter.
+
+prefix = 02 if y coordinate is even
+prefix = 03 if y coordinate is odd
+
+K_Compressed (33 bytes) = prefix (1 byte) + x coordinate (32 bytes)
+
+## Address
+The Bitcoin address (A) is a string of digits and characters that is used to receive Bitcoin payments. 
+
+### P2PK/P2PKH/P2SH
+The algorithms used to generate it are SHA256 and RIPEMD160.
+Bitcoin addresses are additionally Base58Check encoded, which uses 58 characters and a checksum.
+This increases readability, avoids ambiguities and protects against errors during input and transmission. 
+
+A' = RIPEMD160(SHA256(K))
+A = Base58Check(A')
+
+### Bech32/Bech32m
+TODO
+
+## Key Pool
+A key pool is a group of pregenerated keys. Modern HD wallets create key pools by continuing to determine new hierarchical addresses based on the original seed.
+
+## Resources
+https://learnmeabitcoin.com/technical
+
+# Mining
+Mining is the process of adding transactions to the blockchain.
+
+Create a candidate block with transactions from the node's memory pool, construct a block header of this candidate block and apply the SHA256 hash function twice on the block header.
+
+hashed_block = SHA256(SHA256(block_header))
+hashed_block > target: Increment the nonce field in the block header and/or reorganize transactions in the merkle tree and try again.
+hashed_block < target: Broadcast the new block to the network
+
+Each node will receive the new block. They confirm that the block header hashes to below the target and add this block to their blockchain.
+From here, each node will stop working on their own candidate block, construct a new one (with fresh transactions from their memory pool), and start trying to build on top of this new block in the chain.
+
+## Memory Pool
+The memory pool is a node's temporary storage area for transaction data.
+When a new transaction is received by a node, it will hold it in its memory pool with all the other latest transactions it has received. 
+From here the transaction will be hoping to get selected for inclusion in the candidate block.
+
+## Candidate Block
+A candidate block is a temporary block created using transactions selected from the memory pool.
+Miners select transactions from their memory pool to form their own candidate blocks.
+Each node then tries to add their candidate block to the blockchain through the process of mining.
+Every block starts life as a candidate block, but only the ones that are successfully mined get added to the blockchain.
+
+## Block Reward
+TODO: Rewrite
+The miner who is able to mine a block, can claim a block reward. When the miner constructs a candidate block, they put a special transaction (coinbase transaction) at the top of the block.
+The output of the coinbase transaction can only be spend after 100 additional blocks were mined.
+The block reward acts as an incentive for miners to mine new blocks.
+
+block reward = block subsidy + transaction fees
+
+## Block
+A block is a bunch of transactions that have been added to the blockchain.
+
+## Block Header
+- Version
+- Last Block
+- Merkle Root
+- Time
+- Target
+
+## Difficulty
+The difficulty is a number that regulates how long it takes for miners to add new blocks of transactions to the blockchain.
+It adjusts every 2016 blocks (roughly every 2 weeks).
+
+20160 = 2016 blocks * 10 minutes
+diff = 20160 / actual time
+
+diff > 1: Blocks were mined quicker than expected, increase difficulty
+diff < 1: Block were mined slower than expected, decrease difficulty
+
+new difficulty = difficulty * diff
+
+The difficulty will only adjust by a factor of 4 at most (i.e. a number not greater than 4 or less than 0.25). This is to prevent abrupt changes from one difficulty to the next.
+
+## Target
+The target is a number that a block hash must be below for the block to be added on to the blockchain. The target is calculated by dividing the max target with the current difficulty.
+target = targetmax / difficulty
+
+# Address Types
 
 ## Mainnet
 P2PKH: 1
@@ -32,7 +142,7 @@ The unlocking script (scriptSig) will be executed first. Then the locking script
 The script is valid if a non-zero number is on top of the stack.
 The script is invalid if 0 is left on top of the stack or the stack is empty.
 
-## Standard locking-scripts
+## Standard Locking-Scripts
 P2PK: <PUBKEY> OP_CHECKSIG
 P2PKH: OP_DUP OP_HASH160 <PUBKEYHASH> OP_EQUALVERIFY OP_CHECKSIG
 P2MS: <M> <PUBKEY>... <N> CHECKMULTISIG (m of n)
@@ -42,7 +152,7 @@ P2WSH: TODO
 P2TR: TODO
 NULLDATA: OP_RETURN <DATA>
 
-## Operators
+## Common Operators
 
 ### Stack
 OP_DUP
@@ -57,7 +167,7 @@ OP_XOR
 OP_EQUAL
 OP_EQUALVERIFY
 
-### Flow control
+### Flow Control
 OP_IF
 OP_ELSE
 OP_ENDIF
@@ -78,19 +188,20 @@ OP_CHECKSIGVERIFY
 OP_CHECKMULTISIG
 OP_CHECKMULTISIGVERIFY
 
-## Links
+## Resources
 https://en.bitcoin.it/wiki/Transaction
 https://en.bitcoin.it/wiki/Script
 https://en.bitcoin.it/wiki/OP_CHECKSIG
 https://learnmeabitcoin.com/technical/script
 
-# Keys
+# RBF (Replace by fee)
+TODO
 
-# Addresses
+# CPFP (Child pays for parent)
+TODO
 
-# Mining
-
-# RBF
+# PSBT
+TODO
 
 # Timelocks
 
@@ -99,12 +210,19 @@ https://learnmeabitcoin.com/technical/script
 | Transaction Level         | nLockTime           | nSequence           |
 | UTXO Level (Script Level) | CheckLockTimeVerify | CheckSequenceVerify |
 
+## Transaction Level
+Defines the earliest time that the transaction can be added into the blockchain. This allows the signer to create a transaction, which will only be valid in the future.
+
+## UTXO or Script Level
+This kind of timelock will be added into the script of the UTXO, instead of being a field of the transaction. 
+It allows the UTXO to be spendable only after the specified time/blocks have elapsed/been generated.
+
 ## Absolute Timelock
-The locktime will be set in an absolute way by either block height or by the time (Unix timestamp).
+The locktime will be set in an absolute way by either the block height or by the time (Unix timestamp).
 
 nLockTime = 0: Transaction can be added into a block and be appended to the blockchain immediately
 nLockTime < 500,000,000: Block height
-nLockTime > 500,000,000: Unix timestamp
+nLockTime >= 500,000,000: Unix timestamp
 
 CheckLockTimeVerify (CLTV) was added to Bitcoin by a soft fork in December 2015, based on BIP65.
 The difference to nLockTime is that CLTV restricts the UTXO to be spendable only after the specified time/blocks has elapsed/been generated, while nLockTime 
@@ -113,6 +231,8 @@ When the CLTV opcode is called, it will cause the script to fail unless the nLoc
 
 ## Sequence Numbers
 nSequence is used as an opt-in mechanism for absolute timelock, relative timelock and rbf. In order to use absolute timelock, you need to set the nSequence value.
+nSequence locks are set on each input, and measured against the output that each input is consuming.
+In order for a transaction to be valid, all conditions must be satisfied. If even a single sequence lock is not met, the entire transaction will be rejected.
 
 nSequence between 0 and 2,147,483,647: Enables relative timelock, absolute timelock and RBF
 nSequence between 2,147,483,648 and 4,294,967,293: Enables RBF and absolute timelock
@@ -133,16 +253,10 @@ CheckSequenceVerify (CSV) provides for relative locktime the same feature CLTV p
 It specifies how long an output must be part of the blockchain before an input spending it may be added to the blockchain.
 CheckSequenceVerify allows locking for at most 65535 blocks (about 455 days) or for at most 65535*512 seconds (about 388 days).
 
-## Transaction Level
-Defines the earliest time that the transaction can be added into the blockchain. This allows the signer to create a transaction, which will only be valid in the future.
-
-## UTXO or Script Level
-This kind of timelock will be added into the script of the UTXO, instead of being a field of the transaction. 
-It allows the UTXO to be spendable only after the specified time/blocks have elapsed/been generated.
-
-## Links
+## Resources
 https://en.bitcoin.it/wiki/Timelock
 https://github.com/BlockchainCommons/Learning-Bitcoin-from-the-Command-Line/blob/master/08_1_Sending_a_Transaction_with_a_Locktime.md
+https://medium.com/summa-technology/bitcoins-time-locks-27e0c362d7a1
 
 # Units
 
@@ -162,6 +276,6 @@ which is either given in virtualbytes (vbyte, vB) or weight units (wu) where 4 w
 For segwit transactions, which do include witness data, the resulting transaction weight is strictly smaller than 4 × size due to the witness bytes contributing at a lower factor. 
 For non-segwit transactions, their size is equal to their virtualsize 1 B = 1 vB.
 
-## Links
+## Resources
 https://bitcoin.stackexchange.com/questions/89385/is-there-a-difference-between-bytes-and-virtual-bytes-vbytes
 https://bitcoin.stackexchange.com/questions/84004/how-do-virtual-size-stripped-size-and-raw-size-compare-between-legacy-address-f/84006#84006
