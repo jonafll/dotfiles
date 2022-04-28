@@ -1,0 +1,16 @@
+---
+syntax: bash
+tags: [bitcoin, lightning, lnd, lncli]
+---
+
+# Create a wallet
+lncli create
+
+# Unlock the wallet
+lncli unlock
+
+# Stop lnd
+lncli stop
+
+# Change wallet password
+lncli changepassword
