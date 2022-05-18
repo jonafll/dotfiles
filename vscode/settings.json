@@ -57,8 +57,11 @@
   "prettier.arrowParens": "always",
 
   // Go
-  "go.autocompleteUnimportedPackages": true,
   "go.toolsManagement.checkForUpdates": "local",
+  "go.survey.prompt": false,
+  "gopls": {
+    "formatting.gofumpt": true
+  },
   "go.editorContextMenuCommands": {
     "playground": false,
     "debugTestAtCursor": false
