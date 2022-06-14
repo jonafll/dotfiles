@@ -35,7 +35,6 @@
   "editor.smoothScrolling": true,
 
   "files.eol": "\n",
-  "files.insertFinalNewline": true,
 
   "terminal.integrated.cursorBlinking": false,
   "terminal.integrated.cursorStyle": "block",
@@ -45,6 +44,7 @@
   "terminal.integrated.fontWeightBold": "normal",
   "terminal.integrated.lineHeight": 1.1,
   "terminal.integrated.allowChords": false,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
 
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, Inter, sans-serif",
 

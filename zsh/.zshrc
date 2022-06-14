@@ -67,9 +67,6 @@ source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Alias
 
-# Vim
-alias v="vim"
-
 # Colorize grep output (good for log files) 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
