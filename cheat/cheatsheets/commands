@@ -180,6 +180,9 @@ tcpdump
 ## Reading from and writing to network connections using TCP or UDP
 nc
 
+## Request an IP address from a DHCP server
+dhclient
+
 # Files
 
 ## Determine file type

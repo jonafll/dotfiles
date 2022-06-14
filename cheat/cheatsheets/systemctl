@@ -1,0 +1,28 @@
+---
+syntax: bash
+tags: [linux, service]
+---
+
+# Show all running services:
+systemctl status
+
+# Show the status of a service
+systemctl status service
+
+# Check if a service is enabled
+systemctl is-enabled service
+
+# Check if a service is active
+systemctl is-active service
+
+# Start/Stop/Restart/Reload a service
+systemctl start|stop|restart|reload service
+
+# Enable/Disable a service to be started on bootup
+systemctl enable|disable service
+
+# List all failed services
+systemctl --failed
+
+# Show low level details of a service settings on the system
+systemctl show service
