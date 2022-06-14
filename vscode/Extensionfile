@@ -12,7 +12,7 @@ golang.go
 mike-co.import-sorter
 ms-azuretools.vscode-docker
 PKief.material-icon-theme
-rust-lang.rust
+rust-lang.rust-analyzer
 silvenon.mdx
 tamasfe.even-better-toml
 timonwong.shellcheck
