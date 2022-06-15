@@ -23,8 +23,14 @@ ssh username@remote_host 'uptime'
 # Execute a local script on the remote host
 ssh username@remote_host bash < ./local_script.sh
 
-# Log in to a remote host via jump host
+# Log in to a remote host via jump host (command line only)
 ssh -J username@jump_host username@dest_host
+
+# Static port forwarding (e.g. access server applications through webbrowser localhost:local_port)
+ssh -L local_port:username@dest_host:remote_port username@jump_host
+
+# Dynamic port forwarding (access servers through SOCKS5 proxy)
+ssh -D local_port username@jump_host
 
 # Establish a local tunnel on port 8888 to a remote host on port 80
 ssh -f -N -L 8888:your_domain:80 username@remote_host
