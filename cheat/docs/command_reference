@@ -241,7 +241,7 @@ whoami
 ## User information lookup
 finger
 
-# Disk usage
+# Disk
 
 ## Report file system disk space usage
 df
@@ -254,3 +254,12 @@ du
 
 ## Mount a filesystem
 mount
+
+## Convert and copy a file
+dd
+
+## Set up a Linux swap area on a device or in a file
+mkswap
+
+## Enables device or file for swapping
+swapon
