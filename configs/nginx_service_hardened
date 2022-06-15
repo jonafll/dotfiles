@@ -10,3 +10,4 @@ SystemCallFilter=@system-service
 SystemCallFilterErrorNumber=EPERM
 PrivateTmp=yes
 ProtectSystem=full
+ProtectHome=yes
