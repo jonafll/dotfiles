@@ -1,0 +1,22 @@
+---
+syntax: bash
+tags: [linux, systemd]
+---
+
+# Show all messages from this boot
+journalctl -b
+
+# Show all messages from last boot
+journalctl -b -1
+
+# Follow new messages
+journalctl -f
+
+# Show all messages by a specific unit
+journalctl -u unit
+
+# Show all messages by a specific unit and follow new messages
+journalctl -f -u unit
+
+# Display all errors since last boot
+journalctl -b -p err
