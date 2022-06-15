@@ -31,9 +31,6 @@ free
 ## List hardware configuration information
 lshw
 
-## See information about block devices
-lsblk
-
 ## Display USB devices
 lsusb
 
@@ -241,19 +238,32 @@ whoami
 ## User information lookup
 finger
 
-# Disk
+# Disk / Filesystem
 
 ## Report file system disk space usage
 df
 
+## See information about block devices
+lsblk
+
 ## Manage partition tables and partitions on a hard disk
 fdisk
+gdisk
 
 ## Show disk usage
 du
 
 ## Mount a filesystem
 mount
+
+## Unmount a filesystem
+umount
+
+## Build a Linux filesystem on a hard disk partition
+mkfs
+
+# Set or get the label of a FAT32 partition
+fatlabel
 
 ## Convert and copy a file
 dd
@@ -263,3 +273,6 @@ mkswap
 
 ## Enables device or file for swapping
 swapon
+
+## Disables device or file for swapping
+swapoff
