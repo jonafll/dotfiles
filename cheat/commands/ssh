@@ -7,7 +7,8 @@ tags: [ networking, ssh ]
 ssh-keygen
 ssh-add
 ssh-copy-id
-sshfs (Mount remote file systems over ssh)
+sshfs
+scp
 
 # Log in to a remote host
 ssh remote_host
@@ -38,3 +39,15 @@ ssh -f -N -D 7777 username@remote_host
 # (2) Establish a reverse SSH connection after the remote host has connected
 ssh -R 12345:localhost:22 username@remote_host
 ssh localhost -p 12345
+
+# Generate an ed25519 SSH key
+ssh-keygen -t ed25519
+
+# Copy the public key to the remote host
+ssh-copy-id -i /path/to/pubkey username@remote_host
+
+# Copy remote file/dir to local host
+scp username@remote_host:/path/to/remote_file path/to/local_file
+
+# Copy local file/dir to remote host
+scp path/to/local_file username@remote_host:/path/to/remote_file
