@@ -3,7 +3,7 @@ syntax: bash
 tags: [linux, systemd]
 ---
 
-# Show all running services:
+# Show all running services
 systemctl status
 
 # Show the status of a service
@@ -20,6 +20,12 @@ systemctl start|stop|restart|reload service
 
 # Enable/Disable a service to be started on bootup
 systemctl enable|disable service
+
+# Edit a service
+systemctl edit service
+
+# Show the contents of the service file
+systemctl cat service
 
 # List all failed services
 systemctl --failed
