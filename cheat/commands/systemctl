@@ -1,6 +1,6 @@
 ---
 syntax: bash
-tags: [linux, service]
+tags: [linux, systemd]
 ---
 
 # Show all running services:

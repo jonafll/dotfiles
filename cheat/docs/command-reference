@@ -1,5 +1,5 @@
 ---
-syntax: bash
+syntax: markdown
 tags: [ linux ]
 ---
 
@@ -168,7 +168,7 @@ arp
 ## Print the route packets trace to network host
 traceroute
 
-## Manually manipulate the routing tables
+## Show/manipulate the routing table
 route
 
 ## Network exploration tool and security / port scanner
@@ -182,6 +182,12 @@ nc
 
 ## Request an IP address from a DHCP server
 dhclient
+
+## Get or set the hostname
+hostnamectl
+
+# Show DNS settings
+systemd-resolve
 
 # Files
 

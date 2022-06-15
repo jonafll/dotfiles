@@ -1,0 +1,49 @@
+---
+syntax: markdown
+tags: [linux, security]
+---
+# Linux OS Hardening
+
+## User accounts
+
+- Use strong passwords
+- Add 2FA if possible
+- Set default account security policies in /etc/login.def
+- One user per service
+- Change default passwords
+- Disable login in /etc/passwd if not needed (for application / service accounts)
+- Lock user account after too many failed attempts (pam.d)
+- Limit user account ressources (ulimit)
+- Implement a UID/GID policy (separate users from application or system accounts)
+- Monitor user activity
+
+## Filesystem
+
+- Restrict access to files (chmod, chgroup)
+- Use Access Control List (ACL)
+- Use SELinux (optional)
+- Remove unnecessary and orphaned packages
+- Separate disk partitions
+
+## Network
+
+- Enable and configure firewall (deny all by default)
+- Use encrypted tools (ssh, sftp, scp)
+- Turn off ipv6 if not needed
+- Check on listening ports (lsof, netstat)
+
+## System
+
+- Stop and disable unused services (systemctl)
+- Run one application service per system (e.g. database, webserver, fileserver, etc.)
+- Disable USB detection
+- Lockdown cronjobs
+- Backup your system
+- Keep kernel and system up to date
+
+## SSH
+
+- Use Public Key Authentication
+- Change default port
+- Disable root login
+- Allow only specific users

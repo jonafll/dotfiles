@@ -52,9 +52,17 @@ cheatpaths:
 
   # If you have personalized cheatsheets, list them last. They will take
   # precedence over the more global cheatsheets.
-  - name: personal
-    path: ~/.dotfiles/cheat/cheatsheets
-    tags: [personal]
+  - name: commands
+    path: ~/.dotfiles/cheat/commands
+    tags: [command]
+    readonly: false
+  - name: docs
+    path: ~/.dotfiles/cheat/docs
+    tags: [doc]
+    readonly: false
+  - name: guides
+    path: ~/.dotfiles/cheat/guides
+    tags: [guide]
     readonly: false
 
   # While it requires no configuration here, it's also worth noting that
