@@ -1,0 +1,12 @@
+[Service]
+User=www-data
+Group=www-data
+RuntimeDirectory=nginx
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+PIDFile=/run/nginx/nginx.pid
+NoNewPrivileges=true
+LockPersonality=true
+SystemCallFilter=@system-service
+SystemCallFilterErrorNumber=EPERM
+PrivateTmp=yes
+ProtectSystem=full

@@ -1,6 +1,6 @@
 {
   "files.associations": {
     "**/cheat/**": "yaml",
-    "**/configs/sshd_config_hardened": "properties"
+    "**/configs/**": "properties"
   }
 }

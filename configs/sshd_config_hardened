@@ -12,6 +12,7 @@ Include /etc/ssh/sshd_config.d/*.conf
 
 # Use another port if the server is reachable from the internet to reduce log file size
 Port 22
+# Only allow ipv4
 AddressFamily inet
 #ListenAddress 0.0.0.0
 #ListenAddress ::
@@ -33,6 +34,7 @@ LoginGraceTime 1m
 PermitRootLogin no
 #StrictModes yes
 MaxAuthTries 3
+# Customize this option if you want to minimize the number of sessions
 #MaxSessions 10
 
 PubkeyAuthentication yes
@@ -85,6 +87,7 @@ KbdInteractiveAuthentication no
 UsePAM yes
 
 AllowAgentForwarding no
+# Set this to yes if you use this server as a jumphost
 AllowTcpForwarding no
 #GatewayPorts no
 X11Forwarding no
