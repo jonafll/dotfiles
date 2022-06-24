@@ -30,7 +30,7 @@ AddressFamily inet
 
 # Authentication:
 
-LoginGraceTime 1m
+LoginGraceTime 20
 PermitRootLogin no
 #StrictModes yes
 MaxAuthTries 3
@@ -57,7 +57,7 @@ PubkeyAuthentication yes
 
 # To disable tunneled clear text passwords, change to no here!
 PasswordAuthentication no
-#PermitEmptyPasswords no
+PermitEmptyPasswords no
 
 # Change to yes to enable challenge-response passwords (beware issues with
 # some PAM modules and threads)
@@ -104,7 +104,7 @@ ClientAliveCountMax 3
 #UseDNS no
 #PidFile /run/sshd.pid
 #MaxStartups 10:30:100
-#PermitTunnel no
+PermitTunnel no
 #ChrootDirectory none
 #VersionAddendum none
 
