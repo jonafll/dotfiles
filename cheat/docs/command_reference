@@ -101,7 +101,7 @@ ps
 ## Show processes in a tree-like diagram
 pstree
 
-## Find or signal processes by name
+## Find processes by name
 pgrep
 
 ## Display a memory usage map of processes
@@ -112,6 +112,9 @@ top
 
 ## Terminate a process under a given ID
 kill
+
+## Stop processes by name
+pkill
 
 ## Terminate a process under a specific name
 pkill
