@@ -25,6 +25,8 @@
   "workbench.list.openMode": "doubleClick",
   "telemetry.telemetryLevel": "off",
 
+  "window.commandCenter": true,
+
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
 
@@ -83,6 +85,7 @@
   "importSorter.generalConfiguration.sortOnBeforeSave": true,
   "importSorter.sortConfiguration.removeUnusedImports": true,
   "importSorter.sortConfiguration.removeUnusedDefaultImports": true,
+  "importSorter.importStringConfiguration.quoteMark": "double",
 
   // Theme and colors
   "material-icon-theme.activeIconPack": "react",
