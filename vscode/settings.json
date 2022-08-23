@@ -81,12 +81,6 @@
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.surveys.enabled": false,
 
-  // Import Sorter
-  "importSorter.generalConfiguration.sortOnBeforeSave": true,
-  "importSorter.sortConfiguration.removeUnusedImports": true,
-  "importSorter.sortConfiguration.removeUnusedDefaultImports": true,
-  "importSorter.importStringConfiguration.quoteMark": "double",
-
   // Theme and colors
   "material-icon-theme.activeIconPack": "react",
   "material-icon-theme.folders.color": "#616e88",
