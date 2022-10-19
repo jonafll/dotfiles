@@ -77,6 +77,9 @@ curl -sSL https://sunknudsen.com/static/media/privacy-guides/how-to-clean-uninst
 # Install cheat.sh client
 curl -sSL https://cht.sh/:cht.sh > /usr/local/bin/cht && chmod 755 /usr/local/bin/cht
 
+# Install rustup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # Install fonts
 echo "Installing fonts..."
 cp -R "$DOTFILES_DIR"/fonts/* ~/Library/Fonts/
