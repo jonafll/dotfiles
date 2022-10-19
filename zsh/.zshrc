@@ -52,6 +52,9 @@ export GPG_TTY=$(tty)
 export GOPATH=~/.go
 export PATH=$GOPATH/bin:$PATH
 
+# Rust
+source ~/.cargo/env
+
 # Change cheatsheet config path
 export CHEAT_CONFIG_PATH=~/.dotfiles/cheat/conf.yml
 
