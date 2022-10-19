@@ -17,6 +17,7 @@ privacy.firstparty.isolate = true # Restricts access to cookies, the cache, and 
 # privacy.resistFingerprinting = true # Turn on User Agent Spoofing (can be annoying as the window size is randomized)
 privacy.trackingprotection.enabled = true # Blocks domains known to track users
 # webgl.disabled =  true # Disable WebGL. Warning: WebGL based websites doesn't work anymore (e.g. Figma)
+browser.tabs.tabmanager.enabled = false # Removes the unnecessary tabmanager icon introduced in version 106.0
 ```
 
 ## Resources
