@@ -2,7 +2,7 @@
   // General
   "workbench.colorTheme": "Nord",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.productIconTheme": "icons-carbon",
+  "workbench.productIconTheme": "fluent-icons",
   "workbench.colorCustomizations": {
     "[Nord]": {
       "focusBorder": "#00000000",
@@ -48,6 +48,8 @@
   "terminal.integrated.lineHeight": 1.1,
   "terminal.integrated.allowChords": false,
   "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.shellIntegration.enabled": false,
 
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, Inter, sans-serif",
 
@@ -58,10 +60,12 @@
 
   // Prettier
   "prettier.arrowParens": "always",
+  "prettier.singleQuote": true,
 
   // Go
   "go.toolsManagement.checkForUpdates": "local",
   "go.toolsManagement.autoUpdate": true,
+  "go.lintTool": "golangci-lint",
   "go.survey.prompt": false,
   "gopls": {
     "formatting.gofumpt": true
