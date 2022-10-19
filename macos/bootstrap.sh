@@ -63,17 +63,13 @@ brew bundle --file "$DOTFILES_DIR"/homebrew/Brewfile
 echo "Installing vim-plug..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Install ship
-echo "Installing ship..."
-curl -sSL https://github.com/jonafll/ship/releases/download/v0.2.0/ship.sh > /usr/local/bin/ship && chmod 755 /usr/local/bin/ship
-
 # Install spot
 echo "Installing spot..."
 curl -sSL https://github.com/jonafll/spot/releases/download/v0.2.0/spot.sh > /usr/local/bin/spot && chmod 755 /usr/local/bin/spot
 
 # Install appiconupdate
 echo "Installing appiconupdate..."
-curl -sSL https://github.com/jonafll/appiconupdate/releases/download/v0.2.1/appiconupdate.sh > /usr/local/bin/appiconupdate && chmod 755 /usr/local/bin/appiconupdate
+curl -sSL https://github.com/jonafll/appiconupdate/releases/download/v0.3.0/appiconupdate.sh > /usr/local/bin/appiconupdate && chmod 755 /usr/local/bin/appiconupdate
 
 # Install app-cleaner
 echo "Installing app-cleaner..."
