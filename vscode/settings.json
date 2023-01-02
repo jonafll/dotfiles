@@ -67,8 +67,12 @@
   "go.toolsManagement.autoUpdate": true,
   "go.lintTool": "golangci-lint",
   "go.survey.prompt": false,
+  "go.diagnostic.vulncheck": "Imports",
   "gopls": {
-    "formatting.gofumpt": true
+    "formatting.gofumpt": true,
+    "ui.codelenses": {
+      "run_govulncheck": true
+    }
   },
   "go.editorContextMenuCommands": {
     "playground": false,
