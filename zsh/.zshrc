@@ -55,6 +55,9 @@ export PATH=$GOPATH/bin:$PATH
 # Rust
 source ~/.cargo/env
 
+# Java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk-17.jdk/Contents/Home
+
 # Change cheatsheet config path
 export CHEAT_CONFIG_PATH=~/.dotfiles/cheat/conf.yml
 
