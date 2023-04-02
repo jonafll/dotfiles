@@ -1,7 +1,7 @@
 [user]
 	name = jonafll
-	email = contact@jonafellisch.com
-	signingKey = E1F2ED52206682E0
+	email = 42044390+jonafll@users.noreply.github.com
+	signingKey = FE9D061478D5ECE5
 
 [init]
 	defaultBranch = main
