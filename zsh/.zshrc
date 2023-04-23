@@ -14,7 +14,7 @@ eval $(brew shellenv)
 
 # Init oh-my-zsh
 export ZSH=~/.oh-my-zsh
-plugins=(docker)
+plugins=(docker terraform)
 source $ZSH/oh-my-zsh.sh
 
 # Get proper colors
