@@ -3,16 +3,16 @@
 update: code.ls brew.dump
 
 code.ls:
-	./vscode/ls-ext.sh
+	@./vscode/ls-ext.sh
 
 code.inst:
 	./vscode/inst-ext.sh
 
 brew.dump:
-	brew bundle dump --force
+	@brew bundle dump --force
 
 brew.clean:
-	brew bundle cleanup
+	@brew bundle cleanup
 
 brew.check:
-	brew bundle check
+	@brew bundle check
