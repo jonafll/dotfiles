@@ -100,8 +100,8 @@ alias psmem='ps aux | sort -nr -k 4'
 alias pscpu='ps aux | sort -nr -k 3'
 
 # Switch between node versions
-alias node16="brew unlink node && brew link --overwrite node@16"
-alias node18="brew unlink node && brew link --overwrite node"
+alias node18="brew unlink node && brew link --overwrite node@18"
+alias nodelatest="brew unlink node && brew link --overwrite node"
 
 # Open configs
 alias zshconf="vim ~/.zshrc"
