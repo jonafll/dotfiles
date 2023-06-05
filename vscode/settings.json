@@ -68,6 +68,9 @@
   // Prettier
   "prettier.arrowParens": "always",
   "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
+  "prettier.bracketSpacing": true,
+  "prettier.bracketSameLine": true,
 
   // Go
   "go.toolsManagement.checkForUpdates": "local",
@@ -111,19 +114,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  "[javascriptreact]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
   "[typescript]": {
-    "editor.insertSpaces": true,
-    "editor.tabSize": 2,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-
-  "[typescriptreact]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
