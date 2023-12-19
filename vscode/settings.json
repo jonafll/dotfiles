@@ -23,6 +23,7 @@
   "workbench.enableExperiments": false,
   "workbench.settings.editor": "json",
   "workbench.list.openMode": "doubleClick",
+  "workbench.editor.labelFormat": "short",
   "telemetry.telemetryLevel": "off",
 
   "window.commandCenter": true,
@@ -177,7 +178,7 @@
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true
+      "source.organizeImports": "explicit"
     }
   }
 }
