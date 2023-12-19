@@ -43,7 +43,7 @@ export EDITOR=vim
 # links: normal: lc=31 -> Red
 # device major id: df=32 -> Green
 # sizes: sn=32, nb=32, nk=32, nm=32, ng=32, nt=32 -> Green
-export EXA_COLORS=di=34:bd=33:cd=33:so=31:ex=32:ur=33:uw=31:ux=32:ue=32:uu=33:gu=33:lc=31:df=32:sn=32:nb=32:nk=32:nm=32:ng=32:nt=32
+#export EZA_COLORS=di=34:bd=33:cd=33:so=31:ex=32:ur=33:uw=31:ux=32:ue=32:uu=33:gu=33:lc=31:df=32:sn=32:nb=32:nk=32:nm=32:ng=32:nt=32
 
 # GPG
 export GPG_TTY=$(tty)
@@ -81,11 +81,11 @@ alias fgrep="fgrep --color=auto"
 # Human-readable sizes
 alias df="df -h"
 
-# Changing "ls" to "exa" 
-alias ls="exa --color=always"
-alias lal="exa -alg --color=always"
-alias la="exa -a --color=always"
-alias ll="exa -lg --color=always"
+# Changing "ls" to "eza" 
+alias ls="eza --color=always"
+alias lal="eza -alg --color=always"
+alias la="eza -a --color=always"
+alias ll="eza -lg --color=always"
 
 # Allow nested directories by default
 alias mkdir="mkdir -p"
